@@ -1,0 +1,72 @@
+---
+layout: post
+title:  letter 따다닥
+date:   2013-07-22 08:05:00
+category: exam
+tags : letter
+---
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script type="text/javascript">        
+    //define text
+    var text = 'Hello! My name is Cho kyeong won.';
+
+    //text is split up to letters
+    $.each(text.split(''), function(i, letter){
+
+        //we add 100*i ms delay to each letter 
+        setTimeout(function(){
+
+            //we add the letter to the container
+            $('#txt').html($('#txt').html() + letter);
+        
+        }, 800*i);
+
+    });
+
+
+</script>
+<style type="text/css">
+	@-webkit-keyframes blink{from,to{border-color:transparent}50%{border-color:#ea002a}}@-moz-keyframes blink{from,to{border-color:transparent}50%{border-color:#ea002a}}
+	#txt{display:inline-block;border-right:1px solid #ea002a;-webkit-animation:800ms blink step-end infinite;-moz-animation: 800ms blink step-end infinite;}
+</style>
+
+<div id="txt"></div>
+
+
+
+참조 :  
+http://manuelmoreale.com/  
+http://juliengiombetti.fr/  
+
+{% highlight javascript %}
+ //define text
+    var text = 'Hello! My name is Cho kyeong won.';
+
+    //text is split up to letters
+    $.each(text.split(''), function(i, letter){
+
+        //we add 100*i ms delay to each letter 
+        setTimeout(function(){
+
+            //we add the letter to the container
+            $('#txt').html($('#txt').html() + letter);
+        
+        }, 800*i);
+
+    });
+{% endhighlight %}
+{% highlight css %}
+@-webkit-keyframes blink{
+	from,to{border-color:transparent}
+	50%{border-color:#ea002a}
+}
+@-moz-keyframes blink{
+	from,to{border-color:transparent}
+	50%{border-color:#ea002a}
+}
+#txt{
+	display:inline-block;border-right:1px solid #ea002a;
+	-webkit-animation:800ms blink step-end infinite;
+	-moz-animation: 800ms blink step-end infinite;
+}
+{% endhighlight %}

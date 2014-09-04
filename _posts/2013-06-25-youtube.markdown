@@ -1,0 +1,65 @@
+---
+layout: post
+title:  youtube 썸네일 가져오기
+date:   2013-06-25 08:05:00
+category: work
+tags : 
+---
+
+#### youtube 썸네일 가져오기
+여기서 퍼왔나보당  
+http://drumjay.tistory.com/entry/Tip%ED%8B%B0%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4%EC%97%90-%EC%9C%A0%ED%8A%9C%EB%B8%8C-%EB%8F%99%EC%98%81%EC%83%81-%EC%8D%B8%EB%84%A4%EC%9D%BC-%EB%B3%B4%EC%9D%B4%EA%B8%B0
+
+{% highlight text %}
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/0.jpg
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/1.jpg
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/2.jpg
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/3.jpg
+
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/default.jpg
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/hqdefault.jpg
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/mqdefault.jpg
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/maxresdefault.jpg
+{% endhighlight %}
+
+
+#### 반응형 비디오 (youtube)
+{% highlight css %}
+.video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video iframe, .video object, .video embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+{% endhighlight %}
+ 
+{% highlight html %}
+<div class="video">
+<iframe id="testvideo" width="644" height="395" src="http://www.youtube.com/embed/-B-0dj5YAB4?rel=0" frameborder="0" allowfullscreen=""></iframe>
+</div>
+{% endhighlight %}
+
+`padding-bottom: "(100(%)÷가로픽셀)×세로픽셀" `  
+
+#### youtube z-index 문제
+
+이 문제는 유튜브 동영상을 삽입할 때 wmode=opaque 속성을  지정하면 해결할 수 있다.  
+즉, 아래와 같이 삽입된 경우  
+`<iframe src="http://www.youtube.com/embed/N8zO5lP58i4" frameborder="0" allowfullscreen="" width="480" height="360"></iframe>`  
+
+아래와 같이 수정하면 된다.  
+`<iframe src="http://www.youtube.com/embed/N8zO5lP58i4?wmode=opaque" frameborder="0" allowfullscreen="" width="480" height="360"></iframe>`  
+
+단, 이미 속성이 지정된 경우는 wmode 앞에 ?가 아니라 &를 붙여야 한다.  
+즉, 원래 삽입된 코드가 아래와 같은 경우는  
+`<iframe src="http://www.youtube.com/embed/N8zO5lP58i4?rel=0" frameborder="0" allowfullscreen="" width="480" height="360"></iframe>`  
+
+아래와 같이 수정하면 된다.   
+`<iframe src="http://www.youtube.com/embed/N8zO5lP58i4?rel=0&wmode=opaque" frameborder="0" allowfullscreen="" width="480" height="360"></iframe>`  
+
+이런 식으로 수정하면 크롬에서 정상적으로 동작하는 유튜브 동영상을 볼 수 있다.
+
+#### 자동플레이
+`<iframe width="420" height="315" src="[YouTube Video URL]?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>`  
+익스서 안나온다 하믄 `src="http://www.youtube.com/embed/V3oJR5IAMxM?rel=0&autoplay=1&loop=1&playlist=V3oJR5IAMxM"`  
+근데 `?feature=player_detailpage`.... 이게 뭐징..  
+https://developers.google.com/youtube/player_parameters  
+
+#### 플레이 스탑버튼  
+http://css-tricks.com/play-button-youtube-and-vimeo-api/

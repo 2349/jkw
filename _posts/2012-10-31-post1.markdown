@@ -1,0 +1,119 @@
+---
+layout: post
+title:  이전 글 1 (text-indent, 줄바꿈, opacity, filter, backface-visibility, table, click attr, 아이폰 가로)
+date:   2012-10-31 17:08:00
+category: work
+tags : text-indent, 줄바꿈, opacity, filter, backface-visibility, table, click attr, 아이폰 가로
+---
+
+#### text-indent 적용 되는 블록 레벨?
+{% highlight text %}
+float: left; - so it aligns to the side of the text if refers to
+display: block; - so I can use text indent
+width: 16px; - so it has a fixed dimension
+overflow: hidden; - so the text doesn't show up
+text-indent: 20px; - to move the text out the way
+background: url(images/telephone.gif) top left no-repeat; - to put the image in!
+{% endhighlight %}
+
+#### input value text-indent 적용 
+{% highlight css %}
+input.button{
+	width:114px;height:37px;border: none;
+	background: transparent url(images/submit_btn.gif) no-repeat center;
+	overflow: hidden;text-indent: -999px;
+
+	font-size: 0;	/* IE7 */
+	display:block;
+	line-height: 0;	/* IE6 */
+}
+{% endhighlight %}
+
+#### text-indent : -9999px
+background에 이미지 넣고 안에 있는 글자를 감추기 위해 대체적으로 사용하는 기법인데 텍스트를 브라우저 저 멀리 날려버리기때문에 눈에는 보이지 않지만 랜더링할때 브라우저를 크게 그려서 성능을 떨어뜨리는 결과를 가져온다고 한다. 글쓴이는 `.hidden {text-indent:100%; white-space:nowrap; overflow:hidden;}` 을 권장했다. ie7에서 지원이 안되기 때문에 따로 block를 해줘야 한다고 덧붙였다.
+
+회사 퍼블과 예전에 이 문제에 대해 어떤방법이 좋을지를 의논한적이 있다. text-indent의 경우 a 태그 안에 들어가 있을때 ie6에서 가로사이즈를 제대로 인식 못해 저 멀리 안드로메다로 날아가는 버그가 종종 있기에 아래 방법을 많이 쓴다고 했다.  `position:relative; index:-1;` 을 하게 되면 브라우저를 크게 그리지 않으면서 뒤로 숨어버리기 때문에 괜찮은 방법중 하나이지만 a태그 안에 span태그를 넣어 한번더 싸줘야 한다는게 문제였다. 이방법 저방법 각기 장단점이 있었는데...위 방법을 보니 참 괜찮은 것 같다. 그러나 글쓴이가 말했듯이 ie의 크로스브라우징 문제가 걸리기에 아직까진 구글의 방법을 추천했다.
+`font-size:0; line-height:0; text-shadow:none; color:transparent;`
+
+
+#### 텍스트 줄바꿈 및 한글 줄바꿈 (IE & FF)
+1. `word-break : break-all`   
+	-IE - 숫자, 특수문자, 영문, 한글 모두 강제 줄바꿈됨 (단, 특수문자의 종류에 따라서 줄바꿈이 되지 않는 것도 있으니 주의해야함)  
+	-FF - 숫자/특수문자는 줄바꿈 안됨. 영문은 단어별로 줄바꿈 됨. 한글은 강제 줄바꿈 됨.  
+
+2. `word-break:keep-all`  
+	-IE - 영문,숫자,특수문자 띄어쓰기 없이 썼을 경우 줄바꿈 안됨, 한글 단어 단위로 줄바꿈 됨.  
+	-FF - 영문, 숫자, 특수문자 띄어쓰기 없이 썼을 경우 줄바꿈 안됨, 한글 강제 줄바꿈 됨.  
+
+3. `word-wrap:break-word`   
+	-IE - 영문, 숫자, 특수문자 띄어쓰기 없이 썼을 경우 줄바꿈 됨. 영문 단어 단위로 줄바꿈됨. 한글 강제 줄바꿈 됨.  
+	-FF - 영문, 숫자, 특수문자 띄어쓰기 없이 썼을 경우 줄바꿈 됨. 영문 단어 단위로 줄바꿈됨. 한글 강제 줄바꿈 됨.  
+
+4.  `word-break:keep-all; word-wrap:break-word`   
+	-IE - 영문,숫자, 특수문자 띄어쓰기 없이 한줄로 썼을 경우 줄바꿈 됨, 영문/한글 단어 단위로 줄바꿈 됨.  
+	-FF - 영문,숫자, 특수문자 띄어쓰기 없이 한줄로 썼을 경우 줄바꿈 됨, 영문 단어 단위로 줄바꿈 됨, 한글 강제 줄바꿈 됨.  
+
+출처 : [http://blog.naver.com/PostView.nhn?blogId=butygal&logNo=50089735557](http://blog.naver.com/PostView.nhn?blogId=butygal&logNo=50089735557)
+
+
+#### opacity IE대체 filter
+{% highlight css %}
+.opaque1 {	opacity: .5;	/* for all other browsers */	}
+.opaque2 {	filter: alpha(opacity=50);	/* for IE5-7 */		}
+.opaque3 {	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";	/* for IE8 */	}
+
+// IE
+.opaque {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* 먼저 */
+	filter: alpha(opacity=50);	/* 두번째 */
+}
+{% endhighlight %}
+
+
+#### IE filter
+{% highlight css %}
+.alpha60 {
+	background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);	/* 0.6 투명도가 적용 된 색상 적용 */
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);	/* IE 5.5 - 7 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";	/* IE 8 */
+}
+{% endhighlight %}
+ie에서는 그라디언트 필터를 이용하는 건인데 #99000000 에서 99가 투명도를 나타낸다.
+이 숫자를 구하는 방법은 `Math.floor(0.6 * 255).toString(16);` 소스를 파이어버그 콘솔에서 돌려보자~
+
+
+#### jquery click 값가져오기
+제이쿼리 하나도 모를때 써놨나보당
+{% highlight text %}
+$(function($){
+	$('button').click(function(e){
+    	var class = e.target.getAttribute('class');   // class도 가능
+             
+    	// id가 없는 element는 null이 아니라 공백이다.
+        if(class != "") alert(class);
+    });
+});
+{% endhighlight %}
+
+#### 아이폰 가로 폰트 확대 방지
+iPhone는 기본적으로 가로로 눕혔을때 커지는 사이즈에 비례해 폰트가 커지는데 이를 방지하기위해 간단한 css를 적용해서 처리할 수 있다.
+{% highlight css %}
+* {-webkit-text-size-adjust:none;}
+{% endhighlight %}
+
+
+#### Responsive Tables 예제
+[http://www.zurb.com/playground/playground/responsive-tables/index.html](http://www.zurb.com/playground/playground/responsive-tables/index.html)  
+[http://elvery.net/demo/responsive-tables/](http://elvery.net/demo/responsive-tables/)  
+[http://filamentgroup.com/examples/rwd-table-patterns/](http://filamentgroup.com/examples/rwd-table-patterns/)  
+[http://dbushell.com/demos/tables/rt_05-01-12.html](http://dbushell.com/demos/tables/rt_05-01-12.html)  
+[http://css-tricks.com/responsive-data-table-roundup/](http://css-tricks.com/responsive-data-table-roundup/)  
+[http://css-tricks.com/footable-a-jquery-plugin-for-responsive-data-tables/](http://css-tricks.com/footable-a-jquery-plugin-for-responsive-data-tables/)  
+
+
+#### backface-visibility??
+-webkit-backface-visibility:hidden;  
+[http://css-tricks.com/almanac/properties/b/backface-visibility/](http://css-tricks.com/almanac/properties/b/backface-visibility/)  
+[http://designmodo.com/backface-visibility-css-animation/](http://designmodo.com/backface-visibility-css-animation/)  
+[http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp](http://www.w3schools.com/cssref/css3_pr_backface-visibility.asp)  

@@ -1,0 +1,99 @@
+---
+layout: post
+title:  이전 글 2 (select box, A tag, print bg, scroll, input file css, 글자크기 스크립트, 나눔고딕 웹폰트)
+date:   2013-01-24 08:05:00
+category: work
+tags : select box, A tag, print bg, scroll, input file css, 글자크기 스크립트, 나눔고딕 웹폰트
+---
+
+#### select box 꾸미기?
+1. 딱히 좋은 방법이라고는 생각되지 않지만.. <br />
+	IE에서 셀렉트 박스 위에 DIV를 이용한 레이어를 올릴 경우 셀렉트 박스가 가려지지 않는 문제가 있었다. 이 문제 때문에 많은 개발자들이 기존에 내놓은 여러 해결책들이 존재한다.
+	이러한 문제의 원인은 IE에서 태그 종류 중에 z-index가 최상위인 것들이 존재하기 때문에 일어난다. SELECT, OBJECT, IFRAME 등이 그것이다.
+	그간의 해결책은 HTC Behavior를 이용한 사용자 셀렉트 박스 구현하거나 레이어가 표시될 때 뒤에 보여져야 할 셀렉트 박스를 숨기는 것, DIV 안에 IFRAME을 넣고 그 IFRAME 안에 레이어 내용을 구성하는 방법 등이 있었다.
+	근래에 찾은 방법은 방법은 SELECT 위에 IFRAME을 올리고 그 위에 DIV를 올리는 것이다. SELECT와 IFRAME이 모두 최상위 z-index라는 것을 이용한 것으로 반투명 레이어까지 올릴 수 있다는 장점이 있다. 
+	아래 소스를 보면 IFRAME과 DIV의 z-index를 비롯한 모든 크기를 같게 해주고 DIV를 IFRAME 다음에 표시되도록 하고 있다. 반투명 레이어로 만드는 방법은 IFRAME의 스타일에서 투명도(Alpha Filter)를 0으로 해주는 것으로 가능하다.
+	{% highlight html %}
+	<select> 
+	  <option>This usually appears on top in IE</option> 
+	</select> 
+	<iframe src="about:blank" mce_src="about:blank" scrolling="no" frameborder="0" 
+	  style="position:absolute;width:50px;height:90px; 
+	         top:0px;left:0px;z-index:0; 
+	         border:none;display:block"></iframe> 
+	<div 
+	  style="position:absolute;width:50px;height:90px; 
+	         top:0px;left:0px;z-index:0; 
+	         border:solid 1px black"> 
+	  This appears in front of the select in IE 
+	</div>
+	{% endhighlight %}
+
+다른 사이트 참고 
+[http://blog.naver.com/PostView.nhn?blogId=sharkray1&logNo=130129370867](http://blog.naver.com/PostView.nhn?blogId=sharkray1&logNo=130129370867)
+[http://hongseok.kr/?tag=selectbox-height](http://hongseok.kr/?tag=selectbox-height)
+
+#### CSS selector 'A' tag 명시
+:hover pseudo class 이용시 CSS selector에 'A' tag 를 명시하지 않은 경우, IE7에서 마우스를 움직일 때마다 cpu 점유율이 올라가는 문제가 있음. :hover pseudo class 이용시 반드시 'A'를 명시할 것.
+{% highlight css %}
+/* problem */
+#notice_area .txt:hover{color:#4559E9;}
+/* fixed */
+#notice_area a.txt:hover{color:#4559E9;}
+{% endhighlight %}
+
+#### print bg
+-webkit-print-color-adjust: economy | exact  
+크롬 브라우저에서 인쇄시 배경이미지를 출력하고자 할때, `-webkit-print-color-adjust:exact;`와 같은 속성을 적용해준다.  
+단, 배경이미지가 overflow:hidden 되어있는 영역에서 hidden 처리가 되지 않는다는 점..  
+[http://wiki.csswg.org/ideas/print-backgrounds](http://wiki.csswg.org/ideas/print-backgrounds)
+
+#### input file css
+[http://www.quirksmode.org/dom/inputfile.html](http://www.quirksmode.org/dom/inputfile.html)
+
+#### 안드로이드 스크롤
+예전 버전 안드로이드 같은 경우 스크롤이 안된다. 아이스크롤을 써본 결과 특정 요소에 스크립트를 줘야한다.  
+[http://cubiq.org/iscroll](http://cubiq.org/iscroll)  
+[http://dbjavayo.tistory.com/125](http://dbjavayo.tistory.com/125)  
+[http://monkeychoi.blog.me/60123611030](http://monkeychoi.blog.me/60123611030)  
+`$("#page_default").live('touchmove', function (e) { e.preventDefault(); }, false);`
+
+#### 글자 크기 스크립트 
+전에 회사에서 이렇게 썼징...
+{% highlight javascript %}
+jQuery(function($){
+	var cSize;
+	var $el = $("body#top");
+	
+	$("#font_control").find("a")
+		.css('cursor','pointer')
+		.click(function(e){
+
+	        e.preventDefault();
+	        cSize = parseInt($el.css("font-size"));
+	
+	        switch( $(this).attr("id") ){
+	            case "larger":
+	                if(cSize < 20) setSize(2);
+	                else alert('가장 큰 글자 크기입니다.');
+	            	break;
+	            case "smaller":
+	                if(cSize > 12) setSize(-2);
+	                else alert('가장 작은 글자 크기입니다.');
+	            	break;
+	        }
+		return false;
+	});
+
+	function setSize(size) {
+	    $el.css("font-size", cSize + size+"px");
+	}
+	    
+});
+{% endhighlight %}
+
+#### 구글 한글 웹폰트 
+[http://www.google.com/webfonts/earlyaccess](http://www.google.com/webfonts/earlyaccess)
+
+#### css 
+[http://baxang.com/articles/learning-to-love-the-boring-bits-of-css/](http://baxang.com/articles/learning-to-love-the-boring-bits-of-css/)

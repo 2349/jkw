@@ -1,0 +1,87 @@
+---
+layout: post
+title:  이전 글 5 (iframe height, ajax url, ime-mode, ie11 플래시, 터치슬라이드, 스와이프, youku)
+date:   2014-05-13 12:33:00
+category: work
+tags : iframe height, ajax url, ime-mode, ie11 플래시, 터치슬라이드, 스와이프, youku
+---
+
+
+#### iframe 높이 변경
+
+{% highlight javascript %}
+function iframeResize(iframeHeight){
+	$('#iframe_reHeight').css('height',iframeHeight);
+}
+	$('#btn_intro').click(function (){
+		if($(".evt0424Wrap").css("display") == "none"){
+			$('.intro').fadeOut( "slow");
+			$('.evt0424Wrap').fadeIn( "slow");
+			var conH = $('.evt0424').height();
+			parent.iframeResize(conH + 150);
+		}
+	});
+{% endhighlight %}
+이런식으로 iframe 안에 소스에 넣고 iframe 밖에는 이 값을 받을 소스를 넣어둔다.
+
+
+#### ajax url
+ajax로 호출한 url은 다시 호출이 안된다고... 야매인지 해결 방법은 url 뒤에 `"?tmp="+new Date().getTime()` 이런 식으로 시간을 붙이는 것
+
+
+#### 인풋박스(input) 기본입력 설정 ime-mode
+| 값			| 설명  														|
+|---------------|---------------------------------------------------------------|
+| auto			| 기존 값														|
+| normal		| 기본 값														|
+| active		| 활성화. IME기본 설정 언어(한글로 되어있으면 한글)로 입력됨. 	|
+| inactive		| 비활성화. 영문이 기본으로 입력됨.								|
+| disabled		| 한/영 전환키를 사용해도 영문으로만 입력됨. 					|
+
+
+
+#### ie11 플래시 문제
+
+{% highlight html %}
+<iframe title="빈프레임" vspace="0" hspace="0" border="0" style="display:none;display:block\0/;position:absolute;left:0;top:0;right:0;bottom:0;z-index:-1;opacity:0;filter:alpha(opacity=0);"></iframe>
+ 
+<div> ← relative
+    [  요기   ]﻿
+    <ul> ← 메뉴
+{% endhighlight %}
+망할 ie11... ㅠㅠ 하코사에서 해결 글이 있다..
+근데 다른 문제가 나타났다 ㅋㅋ
+
+
+#### 터치슬라이드, 스와이프
+http://dohoons.com/test/flick/  
+출처 : http://blog.naver.com/PostView.nhn?blogId=kes3583&logNo=90168914660   
+*swip 사용 안하고, touchstart, touchmove 사용하여 슬라이드 구현  
+http://burchurl.egloos.com/2363131  
+
+
+#### youku
+http://open.youku.com/tools  
+중국.. 쓸일이 생길 줄은 몰랐지만.. ; youtube 대체로 youku라는 것을 넣엇는데 api가 한문이라 알아 보기 너무 힘들다; tools..
+
+
+#### 걍 테이블..
+{% highlight html %}
+<div>
+<table width="640" align="center" cellpadding="0" cellspacing="0" style="border:0;border-spacing:0;padding:0;margin:0">
+	<tr>
+		<td colspan="2" width="640" style="border:0;margin:0;padding:0"><a href="#"><img src="#" alt="" width="640" style="min-width:640px!important" /></a></td>
+	</tr>
+	<tr>
+		<td style="border:0;margin:0;padding:0"><a href="#"><img src="#" alt="" width="320" /></a></td>
+		<td style="border:0;margin:0;padding:0"><a href="#"><img src="#" alt="" width="320" /></a></td>
+	</tr>
+</table>
+</div>
+{% endhighlight %}
+
+#### 이건 html5로 동영상찾는다고 링크 남겨뒀나봄  
+http://v4e.thewikies.com/  
+http://dolly77.tistory.com/30  
+https://github.com/videojs/video.js/wiki/Browser-&-Device-Compatibility  
+http://stackoverflow.com/questions/2299347/how-do-i-embed-a-mp4-movie-into-my-html  

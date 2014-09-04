@@ -6,16 +6,18 @@
 
 
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-family: 'Apple SD Gothic Neo', AppleGothic, 'Malgun Gothic', dotum;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
+$en-font-family: 'Cabin Sketch', Helvetica, Arial, sans-serif;
 
 $spacing-unit:     30px;
 
 $text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$border-color:     #fff;
+$background-color: #e1e4e5;
+$brand-color:      #005689;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -23,6 +25,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 
 $on-palm:          600px;
 $on-laptop:        800px;
+$on-pc:				1024px;
 
 
 
@@ -34,16 +37,24 @@ $on-laptop:        800px;
 //     }
 // }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+	@if $device == $on-pc {
+		@media screen and (min-width: $device) {
+	        @content;
+	    }
+	}
+	@else {
+	    @media screen and (max-width: $device) {
+	        @content;
+	    }
+	}
 }
 
 
-
+@import url(http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700);
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "post"
 ;

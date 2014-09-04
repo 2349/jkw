@@ -1,0 +1,38 @@
+/**
+ * Site post
+ */
+ .post-list-1{
+ 	margin:0; list-style:none;
+ 	
+ 	>li{
+ 		position:relative;
+ 		border-top:2px solid $grey-color-light;
+ 		border-bottom:2px solid $grey-color-light;
+ 		margin-bottom:$spacing-unit;
+ 		padding:$spacing-unit/2;
+ 	}
+ 	h3{margin-bottom:0}
+ 	p{margin:0}
+ 	.post-meta{
+ 		overflow:hidden;margin:0;
+ 		li{float:left;margin-right:$spacing-unit;list-style-position:inside;}
+ 	}
+ }
+
+
+  .post-list-1 .cate-test{border-color:hsl(random(365), 90, 90);}
+  .post-list-1 .cate-work{border-color:$brand-color;}
+  .post-list-1 .cate-book{border-color:hsl(random(365), 90, 65);}
+  .post-list-1 .cate-exam{border-color:hsl(random(365), 90, 70);}
+
+
+ .pagination{
+ 	text-align:right;
+ 	a, span, em{
+ 		display:inline-block;text-align:center;
+ 		padding-left:8px;padding-right:8px;
+ 		border:2px dotted $border-color;
+ 		background:$brand-color;
+ 		color:$border-color;
+ 	}
+ }

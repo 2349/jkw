@@ -1,0 +1,453 @@
+---
+layout: post
+title:  웹표준 핵심가이드북 XHTML + CSS  
+date:   2012-12-02 06:59:00
+category: book
+tags : 
+---
+
+책 제목 : 웹표준 핵심가이드북 XHTML + CSS  
+부 제목 : 웹 접근성에서 크로스 브라우징까지  
+지은이 : 김데레사, 방미희 지음  
+***
+<h2>Part 01 웹 접근성과 웹 표준</h2>
+<h3>Section 01 웹 접근성(web accessibility)</h3>
+<h4>웹 접근성의 개요</h4>
+웹 사이트에서 제공하는 정보를 차별 및 제한 없이 동등하게 이용할 수 있도록 보장하는 것
+- 장애인 및 고령자 등을 포함한 모든 사람
+- 다양한 플랫폼 및 장치, 웹 브라우저 등의 모든 환경
+
+
+<h4>웹 접근성 준수 시 기대 효과</h4>
+<ol>
+<li>장애인, 고령자 등을 포함한 사용자층 확대</li>
+<li>규정과 법적 요구 사항에 대한 준수</li>
+<li>다양한 환경, 새로운 기기에서의 이용</li>
+<li>개발 및 운용의 효율성 제고</li>
+<li>사회 공헌 및 복지 기업으로서의 기업 이미지 향상</li>
+</ol>
+
+
+<h4>웹 콘텐츠 접근성 지침(WCAG)</h4>
+웹의 표준화 관련 국제 기구인 월드 와이드 웹 컨소시엄(W3C ; World Wide Web Consortium) 산하단체인 WAI의 웹 콘텐츠 접근성 지침은 다음과 같습니다.
+<h5>인지성(Perceivable)</h5>
+<ol>
+<li>모든 텍스트가 아닌 콘텐츠에 대체 텍스트를 사람들이 원하는 인쇄, 점자, 음성, 기호 또는 간단 언어 등과 같은 형태로 제공해야 한다.</li>
+<li>시간을 바탕으로 한 미디어에 대한 대안을 제공해야 한다.</li>
+<li>정보와 구조의 손실 없이 콘텐츠를 다른 방신(예를 들면 더욱 간단한 형태로)들로 표현할 수 있어야 한다.</li>
+<li>사용자들이 보다 쉽게 보고 들을 수 있는 전경에서 배경을 분리한 콘텐츠를 만들어야 한다.</li>
+</ol>
+
+<h5>운용성(Operable)</h5>
+<ol>
+<li>키보드로 모든 기능을 사용할 수 있도록 해야한다.</li>
+<li>읽기 및 콘텐츠를 사용하는 사용자에게 충분한 시간을 제공해야 한다.</li>
+<li>알려진 방법으로 발작을 일으킬 수 있는 콘텐츠를 디자인하지 않아야 한다.</li>
+<li>사용자가 탐색하고, 콘텐츠를 찾고 그들이 어디에 위치하고 있는지를 알 수 있도록 도와주는 방법을 제공해야 한다.</li>
+</ol>
+
+<h5>이해성(Understandable)</h5>
+<ol>
+<li>텍스트 콘텐츠를 판독하고 이해할 수 있도록 만들어야 한다.</li>
+<li>웹 페이지의 탑재와 운용을 예측 가능한 방법으로 제작해야 한다.</li>
+<li>사용자의 실수를 방지하고 수정할 수 있도록 도와야 한다.</li>
+</ol>
+
+<h5>내구성(Robust)</h5>
+<ol>
+<li>보조 기술을 포함한 현재 및 미래의 사용자 에이전트의 호환성을 극대화해야 한다.</li>
+</ol>
+
+
+<h4>장애인 차별 금지 및 권리 구제 등에 관한 법률의 이해</h4>
+21조(정보통신 · 의사소통에서의 정당한 편의 제공)
+- 행위자는 장애인에게 전자 정보 및 비전자 정보를 동등하게 접근, 이용할 수 있는 필요한 수단을 제공
+
+시행령 제14조(정보 접근 · 의사소통에서의 정당한 편의 제공의 단계적 범위 및 편의의 내용)
+1. 누구든지 신체적, 기술적 여건과 관계없이 웹 사이트를 통하여 원하는 서비스를 이용할 수 있도록 접근성이 보장되는 웹 사이트
+
+<div>
+<h5>웹 접근성과 관련된 유용한 자료 모음</h5>
+<ul>
+<li>한국현 웹 콘텐츠 접근성 지침 2.0(2010.12.31) <a href="http://www.wah.or.kr/Example2.0/index.asp" title="사이트로 이동" target="_blank">http://www.wah.or.kr/Example2.0/index.asp</a></li>
+<li>웹 접근성을 고려한 콘텐츠 제작 기법2.0 <a href="http://www.wah.or.kr/Board/brd_view.asp?page=1&brd_sn=4&brd_idx=741" title="사이트로 이동" target="_blank">http://www.wah.or.kr/Board/brd_view.asp?page=1&brd_sn=4&brd_idx=741</a></li>
+<li>웹 접근성 향상을 위한 국가 표준 기술 가이드라인(2009.3.17) <a href="http://www.wah.or.kr/Guide/valuation.asp" title="사이트로 이동" target="_blank">http://www.wah.or.kr/Guide/valuation.asp</a></li>
+<li>W3C 접근성 문서 번역 <a href="http://www.wah.or.kr/w3c_doc/index.asp" title="사이트로 이동" target="_blank">http://www.wah.or.kr/w3c_doc/index.asp</a></li>
+</ul>
+</div>
+
+<div>
+<h5>국내 웹 접근성 관련 참고 웹 사이트</h5>
+<ul>
+<li><a href="http://www.wah.or.kr" title="사이트로 이동" target="_blank">웹 접근성 연구소</a></li>
+<li><a href="http://kwan.net" title="사이트로 이동" target="_blank">한국 웹 접근성 그룹 콱(KWAG)</a></li>
+<li><a href="http://www.iabf.or.kr" title="사이트로 이동" target="_blank">정보 통신 접근성 향상 표준화 포럼</a></li>
+</ul>
+</div>
+
+
+<h3>웹 표준(web standards)</h3>
+<h4>웹 표준이란?</h4>
+웹에서 표준적으로 사용되는 기술이나 규칙을 의미
+
+<h4>웹 표준 관련 기술의 소개</h4>
+<ul>
+<li>구조 언어 (X)HTML & XML
+<ul>
+<li><strong>HTML</strong><p>HTML은 "HyperText Markup Language"의 약자로 컴퓨터 언어로서는 매우 느슨한 구조입니다.</p>
+{% highlight html %}
+<html>
+ <head>
+  <title>문서 제목</title>
+  <meta http-equiv="content-type" content="text/html; charset=euc-kr">
+ </head>
+ <body>
+  <h1>본문 제목</h1>
+  <p>본문 내용 1</p>
+  <p>본문 내용 2</p>
+ </body>
+</html>
+{% endhighlight %}
+</li>
+<li><strong>XML</strong><p>eXtensible Markup Language는 간단히 말하자면 HTML에 사용자가 새로운 태그를 정의할 수 있는 기능이 추가되었다고 생각하면 됩니다.</p>
+{% highlight text %}
+<?xml version="1.0" encoding="euc-kr" ?>
+<일기장>
+ <작성자>홍길동</작성자>
+ <날짜>7월25일</날짜>
+ <제목>웹 표준</제목>
+ <본문>웹 표준은 W3C에서 정한 기술 사양을 말합니다.</본문>
+</일기장>
+{% endhighlight %}
+</li>
+<li><strong>XHTML</strong><p>eXtensible Hypertext Markup Language을 'XML 응용으로써의 HTML4를 다시 공식화한 것', 엄격한 태그 운용</p>
+{% highlight html %}
+<html>
+ <head>
+  <title>문서 제목</title>
+  <meta http-equiv="content-type" content="text/html; charset=euc-kr" /> 
+ </head>
+ <body>
+  <h1>본문 제목</h1>
+  <p>본문 내용1</p>
+  <p>본문 내용2</p>
+ </body>
+</html>
+{% endhighlight %}
+</li>
+<li><strong>HTML5</strong><p>HTML4를 업그레이드한 것.</p>
+
+{% highlight html %}
+<!doctype html>
+<html>
+ <head>
+  <title>문서 제목</title>
+ </head>
+ <body>
+  <header>헤더</header>
+  <nav>네비게이션</nav>
+  <section>
+   <article>섹션</article>
+  <section>
+  <figure>
+   <video src="URI">...</video>
+   <legend>캡션</legend>
+  </figure>
+  <footer>푸터</footer>
+ </body>
+</html>
+{% endhighlight %}
+</li>
+</ul>
+</li>
+<li>표현 언어 CSS(Cascading Style Sheet)</li>
+<li>동작 및 제어를 위한 DOM(Document Object Model) & ECMA Script<p>DOM은 웹 페이지의 구성 체계를 말하는데, 이 논리적 구성 체계를 해석하여 페이지를 표시하거나 ECMA Script 등의 기술을 통하여 DOM의 구조를 변경할 수 있습니다.</p></li>
+</ul>
+<h4>웹 표준의 장점</h4>
+<ul>
+<li>웹 접근성 수준의 향상</li>
+<li>검색 친화적인 웹 사이트 구현</li>
+<li>구조와 표현의 분리</li>
+<li>손쉬운 유지 보수 및 비용 절감 효과</li>
+<li>호환성 확보</li>
+</ul>
+<h4>웹 브라우저와 웹 표준</h4>
+<h5>마치며 몇가지 오해</h5>
+<ol>
+<li>table을 활용하여 웹 사이트를 제작했던 방식은 절대로 사용하면 안된다.</li>
+<li>table을 모두 div로 바꾸기만 하면 된다.</li>
+<li>웹 접근성은 장애인을 위한 것이다.</li>
+<li>웹 접근성을 향상시키기 위해서는 많은 시간과 비용이 들어간다.</li>
+<li>웹 접근성은 퍼블리셔가 구현하는 것이다.</li>
+<li>드림위버를 사용하면 안된다.</li>
+<li>인터넷 익스플로러6 때문에 적용할 수 없다.</li>
+<li>특별한 솔루션을 구입하여 적용하면 구현할 수 있다.</li>
+</ol>
+<p>이와 같은 오해는 나도 상당히 하고 있었던 것 같다. 이 책에서 이와 같은 오해가 정말 얼마나 맞는 이야기인가 묻고 있다. 이러한 생각은 얼마나 맞는 이야기 일까?</p>
+
+<h5>유용한 북마크 모음</h5>
+<ol>
+<li><a href="http://www.w3.org" title="W3C - [World Web Consortium]">W3C - [World Web Consortium]</a></li>
+<li><a href="http://www.iabf.or.kr" title="IABF - 정보통신 접근성 표준화 포럼">IABF - 정보통신 접근성 표준화 포럼</a></li>
+<li><a href="http://www.wah.or.kr" title="웹 접근성 연구소">웹 접근성 연구소</a></li>
+<li><a href="http://html.nhndesign.com" title="네이버 NULI 웹 표준화 가이드">네이버 NULI 웹 표준화 가이드</a></li>
+<li><a href="http://waf.seoul.go.kr" title="서울특별시 - 웹 개발 표준 프레임워크">서울특별시 - 웹 개발 표준 프레임워크</a></li>
+<li><a href="http://forums.mozilla.or.kr" title="Mozilla 한국 포럼">Mozilla 한국 포럼</a></li>
+<li><a href="http://validator.kldp.org" title="한국어 - The W3C Markup Validation Service">한국어 - The W3C Markup Validation Service</a></li>
+<li><a href="http://developer.yahoo.com/yui/reset" title="Yahoo UI Library Reset CSS">Yahoo UI Library Reset CSS</a></li>
+<li><a href="http://www.webstandards.org" title="The Web Standards Project">The Web Standards Project</a></li>
+<li><a href="http://www.csszengarden.com" title="CSS Zen Garden">CSS Zen Garden</a></li>
+<li><a href="http://www.stuffandnonsense.co.uk" title="Stuff and Nonsense">Stuff and Nonsense</a></li>
+<li><a href="http://forum.standardmag.org" title="CDK - Standard Magazine - Forum">CDK - Standard Magazine - Forum</a></li>
+<li><a href="http://www.kbuwel.or.kr" title="한국 시각 장애인 연합회">한국 시각 장애인 연합회</a></li>
+<li><a href="http://www.tta.or.kr" title="한국정보통신기술협회(TTA)">한국정보통신기술협회(TTA)</a></li>
+<li><a href="http://www.wah.or.kr/kwcag" title="웹 콘텐츠 접근성 지침">웹 콘텐츠 접근성 지침</a></li>
+<li><a href="http://www.communis.co.uk/dithered/css_filters" title="CSS Filters and Hacks">CSS Filters and Hacks</a></li>
+<li><a href="http://code.google.com/p/ie7-js" title="CSS 비지원 웹 브라우저를 위한 자바스크립트">CSS 비지원 웹 브라우저를 위한 자바스크립트</a></li>
+<li><a href="http://www.w3schools.com" title="W3Schools Online Web Tutorials">W3Schools Online Web Tutorials</a></li>
+<li><a href="http://webcafe2010.com" title="Web Cafe 실전 예제">Web Cafe 실전 예제</a></li>
+<li><a href="http://www.jeumedia.com" title="제우미디어">제우미디어</a></li>
+</ol>
+
+***
+
+<h2>Part 02 견고하고 웹을 위한 구조 설계(XHTML)</h2>
+<h3>Section 01 시작하기 전에</h3>
+<h4>저작도구 설치 및 환경 설정</h4>
+<h4>파이어폭스 및 부가 기능 설치</h4>
+<p>파이어버그(Firebug), 웹 개발 툴(Web Developer), html 유효성 검사(Html Validator) 소개</p>
+
+<h3>Section 02 웹(World Wide Web)</h3>
+<h4>웹(WWW) 서비스</h4>
+<p>팀 버너스 리경! 웹의 동작 방식은 서버와 클라이언트의 형태를 띄며, 클라이언트가 웹 브라우저를 통해 특정 콘텐츠를 요청하면 서버는 클라이언트의 요청에 응답하는 형식으로 이루어져 있습니다.</p>
+
+<h4>웹 프로그래밍의 이해</h4>
+<table>
+<tr>
+<th>클라이언트 측(client side)</th>
+<th>서버 측(server side)</th>
+</tr>
+<tr>
+<td>(X)HTML, CSS, DOM, ECMA, Script, XML 등</td>
+<td>ASP, JSP, PHP 등</td>
+</tr>
+</table>
+<ul>
+<li>CGI(Common Gateway Interface)</li>
+<li>ASP(Active Server Page)</li>
+<li>PHP(Personal Hompage Tools, Professional HyperText Preprocessor)</li>
+<li>Servlet(Servlet ; Server + Applet) / JSP(Java Server Page)</li>
+</ul>
+
+<h4>시맨틱 웹</h4>
+<p>시맨틱 웹의 정확한 의미는 인간만 이해하는, 웹이 아닌 기계가 이해할 수 있는, 더 나아가 기계 처리가 가능한 웹을 의미합니다.</p>
+<p>이러한 시맨틱 웹의 첫걸음으로 의미를 살린 마크업이 필요합니다. 제목은 제목의 의미를 가진 요소로, 목록 콘텐츠는 목록의 의미를 가진 요소로 마크업하고, 요소에 id나 class를 이용하여 의미를 가지는 네이밍을 사용하는 것이 바람직하다고 할 수 있습니다.</p>
+
+<h3>Section 03 구조를 위한 XHTML</h3>
+<h4>마크업 언어의 분류</h4>
+<dl>
+<dt>순차적 마크업(Procedural Markup)</dt>
+<dd>대표적 순차적 마크업 언어로는 HTML, 서로 다른 시스템 간의 정보 교환용으로는 부적절함.</dd>
+<dt>서술적 마크업(Descriptive Markup)</dt>
+<dd>XML.문서 구조와 표현정보를 분리 할 수 있습니다. 또 분리된 표현 정보를 필요로할 때 다양하게 적용할 수 있고, 텍스트를 기반으로 하기 때문에 이질적인 환경에서 데이터 교환 형태로도 적합.</dd>
+</dl>
+<p>순차적 마크업과 서술적 마크업 모두 수용한 마크업 언어로 <strong>XHTM</strong>L이 있습니다.</p>
+
+<h4>XHTML 서식</h4>
+<ul>
+<li>요소 사용 시 종료 태그의 생략 불가능</li>
+<li>요소명과 속성명에 소문자 사용</li>
+<li>빈 요소 사용시 <요소명 /> 형식으로 기술</li>
+<li>속성에 속성값 생략 불가능</li>
+<li>잘못된 중첩 사용 불가능</li>
+<li>모든 속성값에 인용 부호 사용("")</li>
+<li><, >, &을 &lt ;, &gt ;, &amp ;로 변환하여 사용</li>
+<li>주석은 바르게 사용하고 그 안에 --(더블대시) 사용 불가</li>
+</ul>
+
+<h4>XHTML 구성 요소</h4>
+<dl>
+<dt>태그(tag)</dt>
+<dd><와 >로 묶여서 표현하는 명령어를 말합니다.</dd>
+<dt>요소(element)</dt>
+<dd>시작< tag>~종료< /tag>까지의 모든 명령어 집합을 요소라고 합니다.</dd>
+<dt>속성(attribute)</dt>
+<dd>시작 태그는 태그의 의미와 필요에 따라 개별적은 옵션을 가질 수 있는데, 이러한 옵션을 속성이라고 합니다.(id, class, title 등)</dd>
+<dt>값(value)</dt>
+<dd>각 속성에 가지는 값을 의미. 대입 연산자인 =과 합께 지정됨.</dd>
+</dl>
+
+<h4>XHTML 문서의 기본 구조</h4>
+{% highlight html %}
+<!DOCTYPE> /* DTD 선언 */
+<html> /* XHTML 문서의 시작 */
+ <head>...</head> /* head 영역 */
+ <body>...</body> /* body 영역 */
+</html> /* XHTML 문서의 종료 */
+{% endhighlight %}
+<dl>
+<dt>DTD 선언</dt>
+<dd>문서형 정의의 종류에는 엄격형(Strict)과 호환형(Transitional), 프레임형(Frameset)등이 있습니다.</dd>
+<dt>&lt;html&gt;~&lt;/html&gt;</dt>
+<dd>모든 웹 페이지의 콘텐츠는 html태그 안에 선언해야하며, 웹 페이지의 시작과 종료를 의미.</dd>
+<dt>&lt;head&gt;~&lt;/head&gt;</dt>
+<dd>HTML의 머리부분, head 태그 안에는 문서의 일반적인 정보와 title등 제목을 선언할 수 있습니다.</dd>
+<dt>&lt;body&gt;~&lt;/body&gt;</dt>
+<dd>HTML 문서의 본문 부분에 해당하며, 웹 브라우저 화면에 나타나는 모든 콘텐츠는 body 태그 안에 선언해야합니다.</dd>
+</dl>
+
+<h4>블록 요소와 인라인 요소</h4>
+<dl>
+<dt>블록 요소(block element)</dt>
+<dd>독립적인 형태의 상자를 의미한다. 블록 요소로는 제목(&lt;h1&gt;~&lth6&gt;), 문단(p 요소), 작성자 정보(address 요소) 등이 있습니다.</dd>
+<dt>인라인 요소(inline element)</dt>
+<dd>블록 상자 안의 일부라는 의미. 링크(a 요소), 이미지(img 요소), 강조(em, strong 요소), 텍스트 등이 해당됩니다. 인라인 요소는 텍스트와 인라인 요소 포함할 수 있지만 블록 요소를 포함할 수는 없습니다.</dd>
+</dl>
+<p>인라인 요소와 텍스트는 반드시 블록 레벨 요소에 포함시켜 나타내야만 합니다. 즉 body 요소의 바로 하위에는 블록 레벨 요소만 자식 요소로 올 수 있고, 인라인 요소를 body 요소의 직접적인 하위 내용으로 하는 것은 옳지 않습니다.</p>
+
+<h4>문서형 정의 및 선언, 네임 스페이스, 휴먼 랭귀지</h4>
+<h5>1. 문서형 정의 및 선언(DTD)</h5>
+<p>참조 사이트 : http://www.webstandards.org/learn/reference/templates</p>
+{% highlight html %}
+/* HTML 4.01 */
+/* Strict */
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+/* Transitional */
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+/* Frameset */
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+{% endhighlight %}
+
+{% highlight html %}
+/* XHTML 1.0 */
+/* Strict - taget="_blank", iframe 제한 */
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+/* Transitional */
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+/* Frameset */
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+/* XHTML 1.1 */
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+{% endhighlight %}
+
+<h5>2. 네임 스페이스</h5>
+{% highlight html %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% endhighlight %}
+
+<h5>3. 휴먼 랭귀지</h5>
+<p>웹 브라우저나 화면 낭독기와 같은 User agents가 웹 문서에 쓰여진 언어를 올바로 해석할 수 있도록 (X)HTML 문서에 사용 언어를 선언할 수 있는데, 대표적인 방법에는 휴먼 랭귀지 명시와 meta 요소를 이용한 선언이 있습니다.</p>
+{% highlight html %}
+<html xml:lang="ko" lang="ko">
+<p>사과는 영어로 <span lang="en">apple</span>,
+독일어로 <span lang="de">apfel</span>이라고 합니다.</p>
+{% endhighlight %}
+<p>언어를 설정하는 방식은 HTML에서는 lang 속성을 사용하고, XHTML 1.0에서는 text/html인 경우에 lang과 xml:lang 속성을 사용하며, XHTML 1.1에서는 xml:lang 속성만 사용합니다.</p>
+
+<p>
+W3C HTML DTD 명세서를 읽는 방법 추천 사이트 :
+http://www.pageoff.net/794 
+http://naradesign.net/wp/2010/01/28/1165 
+http://www.w3.org/TR/1999/REC-html401-19991224/sgml/loosedtd.html
+</p>
+
+<h3>Section 04 XHTML 요소</h3>
+<h4>문서 정보 및 문서 제목</h4>
+<h5>1. 문서 정보와 문자 코드 세트(meta)</h5>
+<ul>
+<li>
+{% highlight html %}
+/* 문자 코드 세트 지정하기 */
+<meta http-equive="content-type" content="text/html; charset=utf-8" />
+/* XHTML 문서에 지정하는 마임 타입은 application/xhtml+xml이 일반적이지만 
+HTML에서 사용할 수 없기에 하위 호환성을 고려하여 text/html 사용 */
+{% endhighlight %}
+</li>
+<li>
+{% highlight html %}
+/* 키워드 지정하기 */
+<meta name="keywords" content="검색 키워드, 검색 키워드2" />
+{% endhighlight %}
+</li>
+<li>
+{% highlight html %}
+/* 다양한 문서 정보 지정하기 */
+<meta name="subject" content="문서 제목 정보" />
+<meta name="description" content="웹 페이지 요약 정보" />
+<meta name="author" content="제작자 정보" />
+<meta name="robots" content="검색 로봇 제어" />
+<meta name="copyright" content="저작권 정보" />
+{% endhighlight %}
+</li>
+</ul>
+<h5>문서 제목(title)</h5>
+
+
+<h4>문단 관련 요소</h4>
+<h4>링크와 이미지</h4>
+<h4>목록 관련 요소</h4>
+<h4>텍스트 관련 요소</h4>
+<h4>테이블 관련 요소</h4>
+<h4>폼 관련 요소</h4>
+<h4>인라인 프레임과 개체 삽입</h4>
+<h4>스타일과 스크립트</h4>
+<h4>그룹화 요소</h4>
+
+***
+
+<h2>Part 04 실전 예제</h2>
+<h3>Section 01 제작하기 전에 알아야 할 것들</h3>
+<h4>다양한 환경의 이해</h4>
+<ul>
+	<li>키보드나 마우스가 없는 환경</li>
+	<li>화면을 통한 시각 정보가 아닌 음성으로 정보를 전달받아야 하는 경우(보조 기기를 이용한 접근)</li>
+	<li>음성 정보를 들을 수 없는 환경</li>
+	<li>흑백 모니터 또는 흑백으로 인쇄하여 보는 경우</li>
+	<li>인터넷이 느린 환경 또는 텍스트만 표현할 수 있는 경우</li>
+	<li>다양한 웹 브라우저와 각 버전별 차이 등</li>
+</ul>
+<p>장애인의 인터넷 사이트 이용 방법을 이해하는 데 도움이 되는 웹사이트</p>
+<ul>
+	<li><a title="시각장애인의 컴퓨터 활용 동영상(전맹)으로 이동" href="http://www.wah.or.kr/Accessibility/blind1.asp">시각장애인의 컴퓨터 활용 동영상(전맹)</a></li>
+	<li><a title="시각장애인의 컴퓨터 활용 동영상(저시력인)으로 이동" href="http://www.wah.or.kr/Accessibility/blind2.asp">시각장애인의 컴퓨터 활용 동영상(저시력인)</a></li>
+	<li><a title="백남중 블로그로 이동" href="http://njpaiks.egloos.com">백남중 블로그</a></li>
+	<li><a title="주요 정보통신 보조 기기로 이동" href="http://www.wah.or.kr/Accessibility/support.asp">주요 정보통신 보조 기기</a></li>
+	<li><a title="정보통신 보조 기기 웹 사이트로 이동" href="http://www.at4u.or.kr">정보통신 보조 기기 웹 사이트</a></li>
+</ul>
+<h4>프로젝트 제작 단계</h4>
+<p>일반적인 단계로<br />
+디자인 시간 -&gt; 레이아웃 및 콘텐츠 분석 -&gt; 이미지 준비 -&gt; 마크업(X)HTML -&gt; 스타일 적용(css)</p>
+
+
+<h4>제작가이드</h4>
+<h5>WSG(Web Standardization Guide)</h5>
+<p>폴더 구조, 파일명 규칙, 이미지 파일명 규칙, css &amp; id &amp; class명 규칙 등 설명합니다. 네이밍은 의미와 구조에 맞게 설정하는게 포인트.</p>
+<p>유용한 WSG 사이트</p>
+<a href="http://html.nhndesign.com" title="NHN NULI로 이동">NHN NULI</a>
+<a href="http://waf.seoul.go.kr" title="서울특별시 웹 개발 표준 프레임워크로 이동">서울특별시 웹 개발 표준 프레임워크</a>
+
+<h5>콘텐츠 그룹화</h5>
+<h5>콘텐츠의 논리적인 구성</h5>
+<h5>제목 레벨 정하기</h5>
+<p>세부 마크업으로 디자인상에는 없는 제목을 포함하여 구조를 구성합니다.</p>
+<p>Q.어떤 콘텐츠를 h1으로 정하나요? <br />A. 웹 사이트에서 h1으로 구현하는 것은 주로 로고와 해당 페이지 콘텐츠 제목 두가지가 있습니다. 이건 웹 사이트의 성격과 메인, 서브페이지에 따라 h1으로 설정하는 콘텐츠가 달라지기도 합니다.</p>
+
+<h5>이미지 콘텐츠</h5>
+<p>Screen Reader Emulator - Fangs 스크린 리더 대신 사용해 볼만한 도구로 Firefox Add-ons 프로그램이 있습니다. 스크린 리더가 화면을 읽어 주는 순서를 알려주는 에뮬레이터로, 동작 방식을 이해하는 데에는 도움이 될 수 있을 겁니다.</p>
+
+<h5>의미에 맞는 마크업</h5>
+<p>웹 접근성을 위한 Skip Navigation, 시각장애인은 콘텐츠를 시각적으로 구분할 수 없기 때문에 본문 콘텐츠와 같이 주요 내용이 있는 곳으로 이동하기 위해서, 고려해서 넣은 것. 정보통신 접근성 향상 표준화 포럼에서 제공하는 것을 참고하자.</p>
+
+<h3>Section02 메인 및 템플릿 마크업</h3>
+<ul>
+<li>영문 : <a href="http://validator.w3.org/check">Markup Validation Service</a></li>
+<li>국문 : <a href="http://validator.kldp.org">Markup Validation Service</a></li>
+</ul>
+
+***
+뭔가 정리한다고 했나본데.. 하다 말았다.. 지우기는 아까우니까 남겨두자 

@@ -1,0 +1,141 @@
+---
+layout: post
+title:  이전 글 3 (뷰포트 meta태그 속성, 스킵 네비, 호환성 방지, 파폭 버튼 여백, 일어 폰트, 플레시, IE7 z-index)
+date:   2013-02-24 08:05:00
+category: work
+tags : 뷰포트 meta태그 속성, 스킵 네비, 호환성 방지, 파폭 버튼 여백, 일어 폰트, 플레시, IE7 z-index
+---
+
+#### 뷰포트 meta태그의 속성
+<table>
+<caption></caption>
+<thead>
+<tr>
+<td>속성 이름</td>
+<td>예시</td>
+<td>설명</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>width=200 / width=device-width</td>
+<td>화명의 너비</td>
+</tr>
+<tr>
+<td>height</td>
+<td>height=800 / height=divice-height</td>
+<td>화면의 높이</td>
+</tr>
+<tr>
+<td>initial-scale</td>
+<td>initial-scale=2.0</td>
+<td>초기 확대 비율</td>
+</tr>
+<tr>
+<td>user-scalable</td>
+<td>user-scalable=no</td>
+<td>확대 및 축소의 가능 여부</td>
+</tr>
+<tr>
+<td>minimum-scale</td>
+<td>minimum-scale=1.0</td>
+<td>최소 축소 비율</td>
+</tr>
+<tr>
+<td>maximum-scale</td>
+<td>maximum-scale=2.0</td>
+<td>최대 축소 비율</td>
+</tr>
+<tr>
+<td>target-densitydpi</td>
+<td>target-densitydpi=medium-dpi</td>
+<td>DPI(해상도)지정</td>
+</tr>
+</tbody>
+</table>
+
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+{% endhighlight %}
+
+안드로이드: http://developer.android.com/guide/webapps/targeting.html  
+아이폰 : http://developer.apple.com/library/safari/#documentation/appleapplications/reference/safarihtmlref/Articles/MetaTags.html
+
+#### 스킵네비
+워드프레스에서 기본 테마에서 퍼온듯...
+{% highlight html %}
+<div class="skip-navigation"><a href="#contentarea" title="내용으로 바로가기" class="assistive-text">내용으로 바로가기</a></div>
+{% endhighlight %}
+{% highlight css %}
+.assistive-text{position:absolute;clip:rect(1px,1px,1px,1px);}
+.lt-ie8 .assistive-text{clip:rect(1px 1px 1px 1px)}
+.assistive-text:hover,.assistive-text:active,
+.assistive-text:focus{
+	background: #fff;border: 2px solid #333;border-radius: 3px;clip: auto !important;color: #000;display: block;
+	font-size: 12px;padding: 12px;position: absolute;top: 5px;left: 5px;z-index: 100000;
+}
+{% endhighlight %}
+
+#### 호환성 방지
+IE8이 보다 나아진 웹 표준을 가지고 출시되면서 기존에 있던 IE7에 최적화 되어있던 사이트들은 모두 웹 표준에 맞게 수정해야 합니다.  
+물론 웹 표준은 지켜야 하는게 맞습니다만, 당장 IE8때문에 멀쩡히 잘 운영하고 있는 사이트를 다 갈아엎기란 쉽지 않죠.  
+때문에 마이크로소프트에선 IE8에 '호환성 보기'라는 기능을 추가했는데요, 이 기능을 사용하게 되면 IE7 엔진으로 렌더링 합니다.  
+하지만 보기에도 거추장 스러울 뿐만 아니라 수동으로 눌러줘야하는 불편함도 있죠.  
+그래서 마이크로소프트에서 내놓은 배려(?)가 META 태그에 IE 버전을 표기하는 것입니다.  
+
+`<meta http-equiv="X-UA-Compatible" content="IE=7" />`  
+
+페이지마다 `<head></head>` 태그 사이에 넣어주시면 IE7로 동작하게 됩니다.  
+참고로 네이버에서는 최신 IE 엔진으로 동작하도록 되어있습니다.  
+
+`<meta http-equiv="X-UA-Compatible" content="IE=edge" />`
+
+하지만 저 소스를 넣어도 호환성 모드로 넘어가는 경우가 있다.. 그럴경우엔 혹시 `<html>`안에 ie구분하는 소스가 있다면 해지하고 css파일로 구분하는게 좋을 것 같다.
+
+#### ie8 background image png repeat 1 pixel
+종종 IE8에서 bg 1x1 이미지가 repeat이 안되는 경우가 있다... 당황; 같은 브라우저 버전이라도 되는게 있고 안되는게 있는 - -; 아래는 관련 글이다.  
+http://www.isitedesign.com/labs/2012/02/09/transparent-png-background-repeat-bug/  
+http://stevelove.org/2009/07/10/png-background-repeat-bug-in-internet-explorer-7-and-8/  
+http://www.iandevlin.com/blog/2010/03/webdev/fading-issue-with-repeating-background-transparent-image-in-internet-explorer  
+
+#### 파폭 버튼 여백 생긴 경우
+{% highlight css %}
+button::-moz-focus-inner {
+    border:0; padding:0;
+}
+{% endhighlight %}
+
+#### 일본어 폰트는 뭘 쓰는게 좋을까
+http://blog.naver.com/PostView.nhn?blogId=s9star&logNo=140113236518
+`"ＭＳ Ｐゴシック", "ヒラギノ角ゴ Pro W3", helvetica, arial, sans-serif; `
+
+#### 플레시 어떻게 넣을까 
+예전에 이렇게 넣었징.. 
+{% highlight html %}
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=3,0,0,0" width="1134" height="212">
+	<param name="SRC" value="경로.swf"> 
+	<param name="QUALITY" value="autohigh">
+	<param name="LOOP" value="true"> 
+	<param name="PLAY" value="true"> 
+	<param name="BGCOLOR" value="#ffffff"> 
+	<param name="wmode" value="transparent"></param>
+	<embed src="경로.swf" width="1134" height="212" play="true" loop="true" quality="autohigh" pluginspage="http://www.macromedia.com/shockwave/download/" type="application/x-shockwave-flash" wmode="transparent">
+	</embed>
+</object>
+{% endhighlight %}
+
+#### IE7 z-index, overflow:hidden
+IE7에서 z-index값이 잘 안먹는다.  
+ 
+* 원인
+`#container { position: relative; }` container에 먹혀있는 position:relative;라는 속성때문.  
+이 값이 들어가면 해당 엘리먼트의 z-index는 0이 되어버리고, 이 div가 감싸고 있는 자식 노드도 밖에서 볼때 z-index:0인것처럼 되버린다.  
+
+* 해결책
+position:relative가 먹혀있는 요소에 z-index값을 준다. `#container { position: relative; z-index:20}`  
+또는 absolute되어있는 상위 부모에 relative가 되있으면 그 상위 부모에도 relative를 줘본다.  
+
+oveflow:hidden안먹으면 position:relative;도 같이 써본다.  
+ie7에서 인지 ieTest ie7에서 input 배경을 투명으로 주니까 클릭이 안된다... 꼼수로 투명 배경 이미지 하나 만들어서 깔아야 된다.ㅠ  
+그리고 button이랑 a링크도 뭔가 bg, border없고 absolute로 하니까 클릭이 안된다; 위와 같은 현상인가보다...

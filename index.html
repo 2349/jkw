@@ -4,21 +4,45 @@ description: A description about my blog homepage
 ---
 
 <div id="posts">
-  <h2>Blog Posts</h2>
-  <ul>
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+	<h2>Post list</h2>
+	<ul class="post-list-1">
+	{% for post in paginator.posts %}
+		<li class="cate-{{ post.category }}">
+			<h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+			<p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+			<ul class="post-meta">
+				<li>Date : {{ post.date | date_to_string }}</li>
+				<li>Category : {{ post.category }}</li>
+				<li>Tag : {{ post.tags }}</li>
+			</ul>
+		</li>
+	{% endfor %}
+	</ul>
+  	<!-- Pagination links -->
+	{% if paginator.total_pages > 1 %}
+	<div class="pagination">
+		{% if paginator.previous_page %}
+		<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Prev</a>
+		{% else %}
+		<span>Prev</span>
+		{% endif %}
+
+		{% for page in (1..paginator.total_pages) %}
+			{% if page == paginator.page %}
+			<em>{{ page }}</em>
+			{% elsif page == 1 %}
+			<a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+			{% else %}
+			<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+			{% endif %}
+		{% endfor %}
+
+		{% if paginator.next_page %}
+		<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>
+		{% else %}
+		<span>Next</span>
+		{% endif %}
+	</div>
+	{% endif %}
 </div>
 
-<div id="pages">
-  <h2>Pages</h2>
-  <ul>
-    {% for page in site.html_pages %}
-      {% if page.title %}
-        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</div>

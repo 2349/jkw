@@ -1,0 +1,185 @@
+---
+layout: post
+title:  링크 모음 
+date:   2013-05-31 10:22:00
+category: work
+tags : 
+---
+
+이메일 템플릿 작업 할 경우 :http://www.pelagodesign.com/sidecar/emogrifier/
+http://www.campaignmonitor.com/css/
+
+소스 압축 : http://www.refresh-sf.com/yui/
+소스 압축 풀기 : http://jsbeautifier.org/
+
+영역 관련 스크립트 : http://dimpledfox.tistory.com/14 / http://www.jjpark.net/8
+좌표 : http://findfun.tistory.com/entry/jQuery-API-%EC%A0%95%EB%B3%B5-eventpageY-%EB%A7%88%EC%9A%B0%EC%8A%A4-Y-%EC%A2%8C%ED%91%9C
+
+소스 유려하게 정리 : http://jsbeautifier.org/
+셀렉트 박스 : http://naradesign.net/ouif/uio/select/xhtml.html#3
+셀렉트 박스 스타일 : http://tympanus.net/Tutorials/CustomDropDownListStyling/index3.html
+http://cssglobe.com/custom-styling-of-the-select-elements/
+
+로긴 화면에 쓸거 
+http://wegraphics.net/downloads/vintage-badge-templates-brushes-vectors-and-textures/
+
+윈도8 느낌
+http://blog.sarasoueidan.com/windows8-animations/
+
+브라우저 핵
+http://browserhacks.com/
+
+캔버스 쿼리
+http://canvasquery.com/
+
+웹 이미지 편집기
+http://www.picozu.com/editor
+
+http://css3generator.com/
+
+http://m.mkexdev.net/78
+
+미디어쿼리 관련
+http://naradesign.net/wp/2012/05/30/1823/
+
+이미지 리소스
+http://www.freepik.com/
+
+컬러
+http://line25.com/articles/10-time-saving-online-color-tools-for-web-designers
+웹접근성 컬러러
+http://gmazzocato.altervista.org/colorwheel/wheel.php
+
+이미지 더미 : http://placehold.it/
+
+슬라이드 참고
+http://vanguard.unispheredesign.com/features/shortcodes/logo-scroller/
+제이쿼리 슬라이드 : http://www.webdesignshock.com/100-best-jquery-image-gallery-plugins/
+슬라이드 : http://als.musings.it/
+
+http://addyosmani.com/jqprovenperformance/
+손차장님이 주신거 제이쿼리관련
+
+http://stackoverflow.com/questions/13938641/fancybox-2-forcing-responsive-media-queries-in-ie
+ie9 아이프레임 오류
+
+http://www.convertico.com/
+<a href="http://hyunsik.me/wordpress/?p=2728">http://hyunsik.me/wordpress/?p=2728</a>
+파비콘
+
+인풋 파일 css 먹이기 : http://www.quirksmode.org/dom/inputfile.html
+체크박스 전체 선택 해지 : http://stove99.tistory.com/98
+
+웹접근성 컬러러
+http://gmazzocato.altervista.org/colorwheel/wheel.php
+
+객체지향 css : http://mytory.net/archives/8949 
+퍼블 모음? : http://www.smashingmagazine.com/2012/12/22/talks-to-help-you-become-a-better-front-end-engineer-in-2013/
+
+-------------------------------------------------------
+
+
+body #cboxLoadedContent img{max-width:none;}
+
+폰트 찾기 : http://www.whatfontis.com/
+
+
+제이쿼리 영역(Dimensions) : 
+http://dimpledfox.tistory.com/14
+http://www.jjpark.net/8
+http://findfun.tistory.com/entry/jQuery-API-%EC%A0%95%EB%B3%B5-eventpageY-%EB%A7%88%EC%9A%B0%EC%8A%A4-Y-%EC%A2%8C%ED%91%9C
+
+제이쿼리 플러그인:
+http://www.onextrapixel.com/2013/08/19/40-useful-jquery-tutorials-for-web-developers/
+
+데스트탑, 태블릿, 모바일까지 쉽게 디바이스 구분하는 방법! Device.js를 사용해보세요.
+http://bit.ly/T6ddqm
+
+http://themeforest.net/item/simplicity-creative-flat-retina-theme/5477244?WT.ac=category_item&WT.seg_1=category_item&WT.z_author=QODE
+
+HTML, CSS, JS UI 컴포넌트 라이브러리를 제공하는 사이트 'UIbox'를 소개합니다.
+http://www.uibox.in/
+
+http://designshack.net/articles/css/joshuajohnson-2/
+http://css-tricks.com/complete-guide-table-element/
+http://jackiebalzer.com/color
+http://www.1stwebdesigner.com/design/20-photoshop-plugins/
+
+벡터 이미지를 이용해 다이나믹한 지도를 만들어보세요!
+http://bit.ly/1819npa
+
+http://www.egrappler.com/contents/smartpaginator/demo/smartpaginator.htm
+
+https://www.google.com/webdesigner/
+http://bit.ly/18G6zul
+웹 디자이너를 위한 구글 툴! 디자인 화면에 HTML5와 CSS3로 생명을 불어넣어 줍니다!
+
+http://www.tn3gallery.com/
+http://sanheo.wordpress.com/2013/10/03/%EB%82%98%EB%88%94%EB%B0%94%EB%A5%B8%EA%B3%A0%EB%94%95-%EC%9B%B9%ED%8F%B0%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/
+
+http://coding.smashingmagazine.com/2010/06/17/start-using-css3-today-techniques-and-tutorials/
+애니메이션 툴
+http://matthewlein.com/ceaser/
+
+Label 인터렉션이 돋보이는 심플한 모바일 폼 만들기! 구현 방법도 제공합니다.
+http://bit.ly/1a9UagH
+
+디자이너와 개발자를 위한 심플하고 쉬운 canvas를 이용한 HTML5 차트!
+http://bit.ly/1hH4G6D
+
+15가지의 화려한 풀스크린 비디오 워드프레스 테마와 작업자들을 위한 psd, js등의 무료 리소스파일을 둘러보세요
+http://infinite.metapresso.com/news/metapresso-tweekly-report-vol151/
+
+
+HTML에서 서버사이드 언어까지 초보자도 쉽게 따라갈 수 있는 코딩 학습 튜토리얼 사이트를 엄선해봤습니다.
+http://bit.ly/1cXLHFk
+
+http://blog.naver.com/PostView.nhn?blogId=dalsapcho&logNo=20144939371&categoryNo=29&viewDate=&currentPage=1&listtype=0
+
+html import
+http://www.html5rocks.com/en/tutorials/webcomponents/imports/
+반응형 웹에서 문제 되는 속도 및 성능 이슈. ResponsiveComments가 그 문제에 대해 도와드립니다!
+ 
+http://www.html5rocks.com/en/tutorials/developertools/mobile/
+모바일 웹 개발자들을 위한 크롬 툴! 자신의 모바일 기기 화면을 데스크탑에서 볼 수 있습니다!
+
+
+http://www.berriart.com/sidr/#usage
+http://maplacejs.com/
+http://en.wikipedia.org/wiki/List_of_Microsoft_Windows_fonts
+
+http://jsfiddle.net/Palestinian/YMTzU/
+
+하나는 http://mrdoob.com/ 이고
+하나는 http://www.nihilogic.dk/labs/ 입니다.
+
+	
+"완전무료" CC0 라이센스 이미지 공유 사이트   New  
+2014/04/01 15:49
+복사http://blog.naver.com/soffia/70187857727
+전용뷰어 보기
+"완전무료" CC0 라이센스 이미지 공유 사이트
+
+[1] http://splitshire.com/
+카테고리가 나뉘어있어 원하는 사진을 찾기 용이합니다.
+
+[2] http://www.gratisography.com/
+감성적인 사진들이 많으며, 사진이 극 고화질입니다.
+
+[3] http://wefunction.com/category/free-photos/
+돈을 내서라도 사고싶던 멋진 사진들. 그런 사진들이 무료입니다.
+
+[4] http://unsplash.com/
+크리에이티브한 사진들이 많아 영감을 얻기 좋으며, 활용 용도가 무수히 많습니다.
+
+[5] http://getrefe.tumblr.com/
+거리의 풍경 사진들이 많으며, 약간의 이미지 보정을 하면 소셜미디어 콘텐츠로 활용하기 좋은 사진들이 많습니다.
+
+[6] http://littlevisuals.co/
+어두운 톤의 자연풍경사진이 많아, 글을 삽입하여 활용하기 좋을법합니다.
+
+[7] http://pixabay.com/
+검색이 가능하며 자료가 정말 방대한 곳. 퀄리티가 약간 떨어질 때가 있는데, 이 땐 에디터스 초이스, 작가찾기 등의 기능을 활용해보세요.
+ 
+from http://www.welldone.to/adman 
+[출처] "완전무료" CC0 라이센스 이미지 공유 사이트|작성자 루나

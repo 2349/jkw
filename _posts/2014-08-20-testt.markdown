@@ -1,0 +1,72 @@
+---
+layout: post
+title: test
+date:   2014-08-20 10:38:11
+category: test
+---
+
+# 제목 Header 1
+## 제목 Header 2
+### 제목 Header 3
+#### 제목 Header 4
+##### 제목 Header 5
+###### 제목 Header 6
+
+*기울여쓰기(Italic)*
+**굵게쓰기(Bold)**
+
+_기울여쓰기(Italic)_
+__굵게쓰기(Bold)__
+
+***기울여서 굵게***
+___기울여서 굵게___    
+
+* 인라인 링크 [Google](http://www.google.com/).
+* 참조 링크 [Google] [1].
+* 읽기 편한 링크 [Yahoo!].
+
+[1]: http://www.google.com/
+[yahoo!]: http://www.yahoo.com/
+
+<me@privacy.net>
+
+![Valid XHTML](http://w3.org/Icons/valid-xhtml10).
+
+링크 변경
+
+1. https -> http
+2. www -> dl
+3. ?m -> 삭제 
+
+![납 작았던 시절](http://dl.dropbox.com/s/nnoycfa14777vik/pb-20120605-110210.jpg) ->현재 마크다운은 단축 레퍼런스 문법인 ![그림 이름] 형식은 지원하지 않는다고 합니다.
+![checkmark].
+
+![valid XHTML][checkmark]. ->하지만 뒤에 [] 를 더 붙여주면 작동한다고 하네요~ 대신 그림 이름이 그림 설명으로 사용된다는 군요~
+
+[checkmark]: http://w3.org/Icons/valid-xhtml10
+       "What are you smiling at?"
+
+---
+
+***
+___
+> The syntax is based on the way email programs
+> usually do quotations. You don't need to hard-wrap
+> the paragraphs in your blockquotes, but it looks much nicer if you do.  Depends how lazy you feel.
+
+- You can use a minus sign for a bullet
++ Or plus sign
+* Or an asterisk
+
+1. Numbered lists are easy
+2. Markdown keeps track of the numbers for you
+7. So this will be item 3.
+
+1. 숫자 리스트 아래
+    - 인덴트용 공백 4개를 넣었더니 또다시 리스트가
+        * 공백이 8개면 한단계 더 아래!
+    - 공백을 4개 넣으면 한단계 위로!
+
+<u>Markdown works *fine* in here.</u>
+
+별(`*`) 별(`*`) 무슨 별?
