@@ -1,0 +1,36 @@
+---
+layout: default
+description: 그냥 모아둔 이미지들 또는 내가 그린 것들.
+galleryid: gallery1
+---
+
+{% for gallery in site.data.gallery1 %} 
+{% if gallery.id == page.galleryid %}
+<section class="grid-wrap">
+	<ul class="grid swipe-down" id="grid">
+		<li class="title-box"><h2>Illustrations by ...{{ gallery.description }}</h2></li>
+		{% for image in gallery.images %}
+		<li>
+			<a href="{{ gallery.imagefolder }}/{{ image.name }}">
+				<img src="{{ gallery.imagefolder }}/{{ image.thumb }}" alt="#" />
+				<h3>{{ image.text }}</h3>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>	 	
+</section>
+{% endif %}
+{% endfor %}
+
+<link rel="stylesheet" href="css/gallery1.css" />
+<script src="js/modernizr.custom.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/colorfinder-1.1.js"></script>
+<script src="js/gridScrollFx.js"></script>
+<script>
+	new GridScrollFx( document.getElementById('grid'), {
+		viewportFactor : 0.4
+	});
+</script>

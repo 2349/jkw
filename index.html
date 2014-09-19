@@ -9,7 +9,7 @@ description: A description about my blog homepage
 	{% for post in paginator.posts %}
 		<li class="cate-{{ post.category }}">
 			<h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-			<p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+			<p>{{ post.content | strip_html | truncatewords: 25 }}</p>
 			<ul class="post-meta">
 				<li>Date : {{ post.date | date_to_string }}</li>
 				<li>Category : {{ post.category }}</li>
