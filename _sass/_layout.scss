@@ -3,11 +3,12 @@
  */
 .page-wrapper{
     overflow:hidden;
-    background:url(images/bg.jpg) repeat-y 0 0;
-    background-attachment:fixed;
+    @include media-query($on-pc) {
+        background:url(images/bg.jpg) repeat-y 0 0;
+        background-attachment:fixed;
+    }
 }
 .site-header {
-    position:fixed;top:0;left:0;
     min-height: 56px;
     margin-top:10%;
     text-align:center;
@@ -16,6 +17,7 @@
     // Positioning context for the mobile navigation icon
     @include media-query($on-pc) {
         float:left;width:20%;
+        position:fixed;top:0;left:0;
     }
     .wrapper {
         background:rgba(255,255,255,0.6);
