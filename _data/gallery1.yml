@@ -2,6 +2,54 @@
   description: 그냥 모아둔 이미지들 또는 내가 그린 것들.
   imagefolder: /jkw/page/gallery/images
   images:
+  - name: img34.jpg
+    thumb: img34.jpg
+    text: image34
+  - name: img33.jpg
+    thumb: img33.jpg
+    text: image33
+  - name: img32.jpg
+    thumb: img32.jpg
+    text: image32
+  - name: img31.jpg
+    thumb: img31.jpg
+    text: image31
+  - name: img30.jpg
+    thumb: img30.jpg
+    text: image30
+  - name: img29.jpg
+    thumb: img29.jpg
+    text: image29
+  - name: img28.jpg
+    thumb: img28.jpg
+    text: image28
+  - name: img27.jpg
+    thumb: img27.jpg
+    text: image27
+  - name: img26.jpg
+    thumb: img26.jpg
+    text: image26
+  - name: img25.jpg
+    thumb: img25.jpg
+    text: image25
+  - name: img24.jpg
+    thumb: img24.jpg
+    text: image24
+  - name: img23.jpg
+    thumb: img23.jpg
+    text: image23
+  - name: img22.jpg
+    thumb: img22.jpg
+    text: image22
+  - name: img21.jpg
+    thumb: img21.jpg
+    text: image21
+  - name: img20.jpg
+    thumb: img20.jpg
+    text: image20
+  - name: img19.jpg
+    thumb: img19.jpg
+    text: 그린 그림 20140928
   - name: img18.jpg
     thumb: img18.jpg
     text: 그린 그림 20140913

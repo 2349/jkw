@@ -1,7 +1,7 @@
 .grid-wrap *,.grid-wrap *:after,.grid-wrap *:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-.grid-wrap{clear:both;margin:0 auto;padding:0;max-width:1260px}
+.grid-wrap{clear:both;margin:0 auto;padding:0;}
 .grid{margin:30px auto;padding:0;list-style:none;min-height:500px}
-.js .grid{background:url(images/loading.gif) no-repeat 50% 100px}
+.js .grid{background:url(../images/loading.gif) no-repeat 50% 100px}
 .js .grid.loaded{background:0}
 .grid li{display:inline-block;overflow:hidden;width:314px;text-align:left;vertical-align:top}
 .js .grid li{display:none;float:left}
@@ -18,9 +18,9 @@
 .grid .curtain::after{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,1);content:''}
 .grid.swipe-right .curtain::after,.grid.swipe-rotate .curtain::after{left:-100%}
 .grid.swipe-down .curtain::after{top:-100%}
-.grid li h3{position:absolute;bottom:0;left:0;margin:0;padding:20px;width:100%;background:#2e3444;color:#d3eee2;text-align:right;text-transform:uppercase;letter-spacing:1px;font-weight:800;font-size:1em;-webkit-transition:-webkit-transform .2s,color .2s;transition:transform .2s,color .2s}
+.grid li h3{opacity:0.5;position:absolute;bottom:0;left:0;margin:0;padding:20px;width:100%;background:#2e3444;color:#d3eee2;text-align:right;text-transform:uppercase;letter-spacing:1px;font-weight:800;font-size:1em;-webkit-transition:-webkit-transform .2s,color .2s;transition:transform .2s,color .2s}
 .grid li>a::before{position:absolute;top:0;left:0;width:100.5%;height:100.5%;border:0 solid transparent;background:rgba(0,0,0,0);content:'';-webkit-transition:border-width .2s,border-color .2s;transition:border-width .2s,border-color .2s}
-.grid li.shown:hover h3{color:#fff;-webkit-transform:translate3d(0,-30px,0);transform:translate3d(0,-30px,0)}
+.grid li.shown:hover h3{opacity:1;color:#fff;-webkit-transform:translate3d(0,-30px,0);transform:translate3d(0,-30px,0)}
 .grid li.shown:hover>a::before{border-width:14px;border-color:#2e3444}
 .grid.swipe-right li.animate .curtain{-webkit-animation:swipeRight 1.5s cubic-bezier(0.6,0,0.4,1) forwards;animation:swipeRight 1.5s cubic-bezier(0.6,0,0.4,1) forwards}
 
