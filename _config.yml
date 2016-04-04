@@ -1,18 +1,18 @@
-title: JKW Notes
-email: jkw5022@cafe24.com
-
-github_username:  2349
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables"]
+title: JKW blog
+markdown: kramdown
 highlighter: pygments
 permalink: /:categories/:year/:month/:day/:title/
-
-safe: true
-lsi: true
+excerpt_separator: ""
+collections:
+  docs:
+    output: true
+name: jkw blog
+description: jkw blog
 baseurl: /jkw
 gems:
+  - jekyll-paginate
   - jekyll-redirect-from
   - jemoji
 encoding: "utf-8"
-paginate: 15
+paginate: 10
+paginate_path: "/blog/page:num/"

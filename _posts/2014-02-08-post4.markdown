@@ -2,7 +2,7 @@
 layout: post
 title:  이전 글 4 (android web margin, ie7 png ilter, i6 png, ul inside)
 date:   2014-02-08 08:05:00
-category: work
+category: etc
 tags : android web margin, ie7 png ilter, i6 png, ul inside
 ---
 

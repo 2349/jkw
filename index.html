@@ -4,17 +4,16 @@ description: A description about my blog homepage
 ---
 
 <div id="posts">
-	<h2>Post list</h2>
+	<h2>전체 목록</h2>
 	<ul class="post-list-1">
 	{% for post in paginator.posts %}
 		<li class="cate-{{ post.category }}">
-			<h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-			<p>{{ post.content | strip_html | truncatewords: 25 }}</p>
+			<h3><sup>{{ post.category }}</sup><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
 			<ul class="post-meta">
-				<li>Date : {{ post.date | date_to_string }}</li>
-				<li>Category : {{ post.category }}</li>
-				<li>Tag : {{ post.tags }}</li>
+				<li><i class="fa fa-clock-o"></i> {{ post.date | date_to_string }}</li>
+				<li><i class="fa fa-tags"></i> {{ post.tags }}</li>
 			</ul>
+			<p>{{ post.content | strip_html | truncatewords: 25 }}</p>
 		</li>
 	{% endfor %}
 	</ul>

@@ -2,7 +2,7 @@
 layout: post
 title:  판에서 퍼온 독서
 date:   2014-04-01 08:05:00
-category: book
+category: etc
 tags : 판에서 퍼온 독서
 ---
 

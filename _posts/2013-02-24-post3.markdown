@@ -2,7 +2,7 @@
 layout: post
 title:  이전 글 3 (뷰포트 meta태그 속성, 스킵 네비, 호환성 방지, 파폭 버튼 여백, 일어 폰트, 플레시, IE7 z-index)
 date:   2013-02-24 08:05:00
-category: work
+category: etc
 tags : 뷰포트 meta태그 속성, 스킵 네비, 호환성 방지, 파폭 버튼 여백, 일어 폰트, 플레시, IE7 z-index
 ---
 

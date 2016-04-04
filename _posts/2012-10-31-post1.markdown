@@ -2,7 +2,7 @@
 layout: post
 title:  이전 글 1 (text-indent, 줄바꿈, opacity, filter, backface-visibility, table, click attr, 아이폰 가로)
 date:   2012-10-31 17:08:00
-category: work
+category: etc
 tags : text-indent, 줄바꿈, opacity, filter, backface-visibility, table, click attr, 아이폰 가로
 ---
 

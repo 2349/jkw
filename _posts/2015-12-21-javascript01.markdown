@@ -1,0 +1,10 @@
+---
+layout: post
+title: javascript01
+date:   2015-12-21 00:00:00
+category: javascript
+---
+
+## 1장 자바스크립트란 무엇인가
+
+## 2장 HTML 속의 자바스크립트

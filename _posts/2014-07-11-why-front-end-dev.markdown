@@ -2,7 +2,7 @@
 layout: post
 title:  프론트엔드 개발자는 왜 구하기 어렵나요?
 date:   2014-07-11 12:33:00
-category: work
+category: etc
 tags : front-end developer
 ---
 

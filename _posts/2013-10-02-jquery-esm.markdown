@@ -2,7 +2,7 @@
 layout: post
 title:  jQuery 이벤트 & 셀렉터 & 메소드 
 date:   2013-10-02 08:05:00
-category: work
+category: etc
 tags : jquery
 ---
 

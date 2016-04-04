@@ -85,15 +85,15 @@ h1, h2, h3, h4, h5, h6 {}
  * Links
  */
 a {
-    color: $brand-color;
+    color: $text-color;
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        color: lighten($text-color, 15%);
     }
 
     &:hover {
-        color: $text-color;
+        color: $brand-color;
         text-decoration: underline;
     }
 }
@@ -104,8 +104,8 @@ a {
  * Blockquotes
  */
 blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
+    color: $border-color;
+    border-left: 4px solid $border-color;
     padding-left: $spacing-unit / 2;
     font-size: 18px;
     letter-spacing: -1px;
@@ -124,7 +124,7 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
+    border: 1px solid $border-color;
     border-radius: 3px;
     background-color: #eef;
     font-family: Menlo, Consolas, 'Apple SD Gothic Neo', AppleGothic, 'Malgun Gothic', dotum, "Courier New", Courier, "Liberation Mono", monospace;
@@ -193,7 +193,26 @@ pre {
         vertical-align: middle;
 
         path {
-            fill: $grey-color;
+            fill: $border-color;
         }
     }
 }
+
+.en{font-family:$en-font-family}
+.radial-progress{
+    width:$spacing-unit*4;
+    height:$spacing-unit*4;
+    background-color:$border-color;
+    .circle .fill{
+        width:$spacing-unit*4;
+        height:$spacing-unit*4;
+        background-color:$brand-color;
+        -webkit-backface-visibility: hidden;
+        transition: -webkit-transform 1s;
+        transition: -ms-transform 1s;
+        transition: transform 1s;
+        position: absolute;
+        clip: rect(0px, $spacing-unit*2, $spacing-unit*2, 0px);
+        border-radius: 50%;
+    }
+}  

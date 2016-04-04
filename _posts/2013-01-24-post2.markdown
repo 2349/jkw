@@ -2,7 +2,7 @@
 layout: post
 title:  이전 글 2 (select box, A tag, print bg, scroll, input file css, 글자크기 스크립트, 나눔고딕 웹폰트)
 date:   2013-01-24 08:05:00
-category: work
+category: etc
 tags : select box, A tag, print bg, scroll, input file css, 글자크기 스크립트, 나눔고딕 웹폰트
 ---
 

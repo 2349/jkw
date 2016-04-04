@@ -2,7 +2,7 @@
 layout: post
 title:  숨김
 date:   2013-06-17 10:22:00
-category: work
+category: etc
 tags : 숨김
 ---
 

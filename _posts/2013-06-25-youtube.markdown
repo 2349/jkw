@@ -2,7 +2,7 @@
 layout: post
 title:  youtube 썸네일 가져오기
 date:   2013-06-25 08:05:00
-category: work
+category: etc
 tags : 
 ---
 

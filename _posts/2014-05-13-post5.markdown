@@ -2,7 +2,7 @@
 layout: post
 title:  이전 글 5 (iframe height, ajax url, ime-mode, ie11 플래시, 터치슬라이드, 스와이프, youku)
 date:   2014-05-13 12:33:00
-category: work
+category: etc
 tags : iframe height, ajax url, ime-mode, ie11 플래시, 터치슬라이드, 스와이프, youku
 ---
 

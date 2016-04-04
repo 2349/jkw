@@ -2,55 +2,41 @@
  * Site header
  */
 .page-wrapper{
-    overflow:hidden;
-    @include media-query($on-pc) {
-        background:url(images/bg.jpg) repeat-y 0 0;
-        background-attachment:fixed;
-    }
+    
 }
 .site-header {
-    min-height: 56px;
-    margin-top:10%;
-    text-align:center;
-    font-family:$en-font-family;
-
     // Positioning context for the mobile navigation icon
     @include media-query($on-pc) {
-        float:left;width:20%;
-        position:fixed;top:0;left:0;
+        position:relative;
+        .wrapper{padding:5% 0}
     }
-    .wrapper {
-        background:rgba(255,255,255,0.6);
+    &:before {
+        content: "";
+        position: absolute;top:0;
+        background:url(images/bg.jpg) no-repeat 0 0;
+        background-size: cover;
+        z-index: -1;height:100%; width:100%;
+        opacity:0.8;
     }
-    .me_wrap img{margin:0 auto}
 }
 
 .site-title {
-    font-size: 40px;
-    line-height: 56px;
-    letter-spacing: -1px;
+    width:409px;height:127px;
+    display:inline-block;
     margin-bottom: 0;
-    text-transform:uppercase;
-
-    &,
-    &:visited {
-        color: $grey-color-dark;
-    }
-    &:hover{text-decoration:none}
+    background:url(images/logo.png) no-repeat 0 0;
+    background-size:100% auto;
+    text-indent:-999em;
+    a{display:block;height:100%}
 }
 
 .site-nav {
-    border-top:1px dashed darken( $border-color, 35% );
-    border-bottom:1px dashed $border-color;
-    line-height: 51px;
-
     .menu-icon {
         display: none;
     }
 
     .page-link {
         position:relative;display: block;
-        border-bottom:1px dashed $border-color;
         padding:10px 0;
         font-size: $base-font-size + 4;
         color: $text-color;
@@ -59,7 +45,6 @@
         &:after{
             position:absolute;left:0;bottom:0;
             display:block;width:100%;height:1px;content:'';
-            border-bottom:1px dashed darken( $border-color, 35% );
         }
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
@@ -67,22 +52,22 @@
         }
     }
     .trigger{
-        border-top:1px dashed $border-color;
-        border-bottom:1px dashed darken( $border-color, 35% );
-        padding-bottom:15px;
+        
     }
-    h2{
-        font-size: $base-font-size + 4;margin-bottom:0;
+    ul{
+        margin:0;list-style:none;line-height:1em;height:127px;display:-webkit-flex;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;
+        .current a{color:$brand-color;}
     }
-    ul{margin:0;list-style:none;line-height:1em;}
-    ul li{display:inline-block;padding:2px 5px;}
 
+    @include media-query($on-pc) {
+        float:right;
+    }
     @include media-query($on-palm) {
         position: absolute;
         top: 9px;
         right: 30px;
         background-color: $background-color;
-        border: 1px solid $grey-color-light;
+        border: 1px solid $border-color;
         border-radius: 5px;
         text-align: right;
 
@@ -100,7 +85,7 @@
                 height: 15px;
 
                 path {
-                    fill: $grey-color-dark;
+                    fill: $border-color;
                 }
             }
         }
@@ -117,9 +102,16 @@
         }
 
         .page-link {
-            
             padding: 5px 10px;
         }
+    }
+    
+    a,
+    a:visited {
+        text-transform:uppercase;
+        color: invert($text-color);
+        font-family:$en-font-family;
+        font-size:$small-font-size;letter-spacing:0.2em;
     }
 }
 
@@ -130,7 +122,7 @@
  */
 .site-footer {
     display:none;
-    border-top: 1px solid $grey-color-light;
+    border-top: 1px solid $border-color;
     padding: $spacing-unit 0;
     @include media-query($on-pc) {
         float:right;width:80%;
@@ -150,7 +142,7 @@
 
 .footer-col-wrapper {
     font-size: 15px;
-    color: $grey-color;
+    color: $border-color;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
 }
@@ -204,10 +196,6 @@
  */
 .page-content {
     padding: $spacing-unit 0;
-    background:$border-color;
-    @include media-query($on-pc) {
-        float:right;width:80%;
-    }
 }
 
 .page-heading {
@@ -225,7 +213,7 @@
 
 .post-meta {
     font-size: $small-font-size;
-    color: $grey-color;
+    color: $border-color;
 }
 
 .post-link {

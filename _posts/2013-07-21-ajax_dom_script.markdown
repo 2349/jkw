@@ -2,7 +2,7 @@
 layout: post
 title:  Ajax Dom 스크립팅 1page~
 date:   2013-07-21 03:05:00
-category: book
+category: etc
 tags : Ajax Dom 스크립팅
 
 ---
