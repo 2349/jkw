@@ -1,6 +1,6 @@
-title: JKW blog
+title: "JKW blog"
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 permalink: /:categories/:year/:month/:day/:title/
 excerpt_separator: ""
 collections:
