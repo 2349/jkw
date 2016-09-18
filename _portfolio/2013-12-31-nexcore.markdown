@@ -1,0 +1,23 @@
+---
+layout: portfolio
+title:  nexcore
+dateStart: 2013-12-01
+dateEnd: 2013-12-31
+category: 반응형, Wordpress
+tags : nexcore, 구축, 반응형, Wrodpress, metabrain
+---
+
+![nexcore 대표이미지](/jkw/portfolio/images/nexcore/img01.jpg)
+
+
+프로젝트 내용
+: SK C&C NEXCORE 웹사이트 구축 메인작업했습니다.(영문)
+
+URL
+: [http://nexcore.skcc.com/](http://nexcore.skcc.com/ "새창"){:target="_blank"}
+
+참여도
+: 영문 메인 페이지 작업
+
+Skills
+: html, css, html5, css3, javascript, jquery, Wordpress

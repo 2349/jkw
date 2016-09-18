@@ -4,7 +4,7 @@ highlighter: rouge
 permalink: /:categories/:year/:month/:day/:title/
 excerpt_separator: ""
 collections:
-  docs:
+  portfolio:
     output: true
 name: jkw blog
 description: jkw blog

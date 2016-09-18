@@ -1,0 +1,23 @@
+---
+layout: portfolio
+title:  아산정책연구소
+dateStart: 2013-10-01
+dateEnd: 2013-12-31
+category: 반응형, Wordpress
+tags : asaninst, 구축, 반응형, Wrodpress, metabrain
+---
+
+![asaninst 대표이미지](/jkw/portfolio/images/asaninst/img01.jpg)
+
+
+프로젝트 내용
+: 영문 사이트 구축 작업했습니다. 국문사이트는 인수인계하였습니다.
+
+URL
+: [http://asaninst.org](http://asaninst.org "새창"){:target="_blank"}
+
+참여도
+: 100%
+
+Skills
+: html, css, html5, css3, javascript, jquery, Wordpress

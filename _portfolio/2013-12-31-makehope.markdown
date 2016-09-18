@@ -1,0 +1,23 @@
+---
+layout: portfolio
+title:  희망제작소
+dateStart: 2013-12-01
+dateEnd: 2013-12-31
+category: 반응형, Wordpress
+tags : 희망제작소, 구축, 반응형, Wrodpress, metabrain
+---
+
+![makehope 대표이미지](/jkw/portfolio/images/makehope/img01.jpg)
+
+
+프로젝트 내용
+: 희망제작소 웹사이트 구축 메인작업했습니다.
+
+URL
+: [http://www.makehope.org](http://www.makehope.org "새창"){:target="_blank"}
+
+참여도
+: 메인 페이지 작업
+
+Skills
+: html, css, html5, css3, javascript, jquery, Wordpress

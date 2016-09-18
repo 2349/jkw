@@ -2,7 +2,7 @@
  * Site header
  */
 .page-wrapper{
-    
+
 }
 .site-header {
     // Positioning context for the mobile navigation icon
@@ -52,7 +52,7 @@
         }
     }
     .trigger{
-        
+
     }
     ul{
         margin:0;list-style:none;line-height:1em;height:127px;display:-webkit-flex;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;
@@ -105,7 +105,7 @@
             padding: 5px 10px;
         }
     }
-    
+
     a,
     a:visited {
         text-transform:uppercase;
@@ -226,6 +226,8 @@
 /**
  * Posts
  */
+ @mixin hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}
+ .hidden{@include hidden;}
 .post-header {
     margin-bottom: $spacing-unit;
 }

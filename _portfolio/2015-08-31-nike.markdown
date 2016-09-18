@@ -1,0 +1,23 @@
+---
+layout: portfolio
+title:  nike
+dateStart: 2015-08-01
+dateEnd: 2015-08-31
+category: PC, Mobile
+tags : nike, 운영, SM, Digitalworks
+---
+
+![nike 대표이미지](/jkw/portfolio/images/nike/img01.jpg)
+
+
+프로젝트 내용
+: 나이키 운영업무(이벤트 페이지 및 기존 배너들 수정)
+
+URL
+: [http://www.nike.co.kr/](http://www.nike.co.kr/ "새창"){:target="_blank"}
+
+참여도
+: 100%
+
+Skills
+: html, css, html5, css3, javascript, jquery

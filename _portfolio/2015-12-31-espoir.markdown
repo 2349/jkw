@@ -1,0 +1,25 @@
+---
+layout: portfolio
+title:  espoir
+dateStart: 2015-09-01
+dateEnd: 2015-12-31
+category: PC, Mobile
+tags : espoir, 리뉴얼, 고도화, Digitalworks
+---
+
+![espoir 대표이미지](/jkw/portfolio/images/espoir/img01.jpg)
+
+
+프로젝트 내용
+: 에스쁘아 고도화 작업입니다.
+모바일은 서브페이지 위주로 작업했으며 웹페이지는 메인퍼블리싱으로 작업했습니다.
+Grunt와 Less를 프로젝트에서 사용했습니다.
+
+URL
+: [http://www.espoir.com/main.do](http://www.espoir.com/main.do "새창"){:target="_blank"}, [http://m.espoir.com/mobile/main/main.do](http://m.espoir.com/mobile/main/main.do "새창"){:target="_blank"}
+
+참여도
+: 50%(서브 퍼블리싱 - 웹 100%, 모바일 코딩 40%)
+
+Skills
+: html, css, html5, css3, javascript, jquery, Grunt, Less
