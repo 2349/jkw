@@ -1,0 +1,23 @@
+---
+layout: portfolio
+title:  아이비스타
+dateStart: 2012-08-01
+dateEnd: 2012-08-31
+category: 반응형, Wordpress
+tags : ivy-star, 구축, 반응형, Wrodpress, metabrain
+---
+
+![ivy-star 대표이미지](/jkw/portfolio/images/ivystar/img01.jpg)
+
+
+프로젝트 내용
+: 아이비스타 사이트 구축 작업입니다.
+
+URL
+: [http://www.ivy-star.co.kr](http://www.ivy-star.co.kr "새창"){:target="_blank"}
+
+참여도
+: 30%(서브퍼블리싱)
+
+Skills
+: html, css, html5, css3, javascript, jquery, Wordpress

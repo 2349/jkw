@@ -1,0 +1,23 @@
+---
+layout: portfolio
+title:  원광대발전기금
+dateStart: 2012-11-01
+dateEnd: 2012-12-31
+category: 반응형, Wordpress
+tags : 원광대발전기금, 구축, 반응형, Wrodpress, metabrain
+---
+
+![원광대발전기금 대표이미지](/jkw/portfolio/images/fund-wku/img01.jpg)
+
+
+프로젝트 내용
+: 원광대발전기금 사이트 구축 작업입니다.
+
+URL
+: [http://fund.wku.ac.kr](http://fund.wku.ac.kr "새창"){:target="_blank"}
+
+참여도
+: 100%
+
+Skills
+: html, css, html5, css3, javascript, jquery, Wordpress

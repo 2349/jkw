@@ -1,0 +1,20 @@
+---
+layout: portfolio
+title:  saltlux
+dateStart: 2012-08-01
+dateEnd: 2012-12-31
+category: 반응형, Wordpress
+tags : saltlux, 구축, 반응형, Wrodpress, metabrain
+---
+
+![saltlux 대표이미지](/jkw/portfolio/images/saltlux/img01.jpg)
+
+
+프로젝트 내용
+: 솔트룩스 사이트 구축 작업입니다.
+
+참여도
+: 30%(서브퍼블리싱)
+
+Skills
+: html, css, html5, css3, javascript, jquery, Wordpress

@@ -1,0 +1,19 @@
+---
+layout: portfolio
+title:  마이컨벤션
+dateStart: 2012-08-01
+dateEnd: 2012-08-31
+category: 반응형, Wordpress
+tags : 마이컨벤션, 구축, 반응형, Wrodpress, metabrain
+thumImg: false
+---
+
+
+프로젝트 내용
+: 마이컨벤션 사이트 구축 작업입니다.
+
+참여도
+: 100%
+
+Skills
+: html, css, html5, css3, javascript, jquery, Wordpress
