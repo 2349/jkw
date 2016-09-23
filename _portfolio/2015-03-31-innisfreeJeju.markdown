@@ -14,7 +14,7 @@ tags :  innisfreeJeju, 운영, SM, Digitalworks
 : 이니스프리 제주사이트 운영업무
 
 URL
-: [http://www.innisfreeworld.com](http://www.innisfreeworld.com  "새창"){:target="_blank"}
+: [http://jeju.innisfree.co.kr/](http://jeju.innisfree.co.kr/JejuHouseMain.do "새창"){:target="_blank"}
 
 참여도
 : 100%

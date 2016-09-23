@@ -6,8 +6,8 @@
 }
 .site-header {
     // Positioning context for the mobile navigation icon
+    position:relative;
     @include media-query($on-pc) {
-        position:relative;
         .wrapper{padding:5% 0}
     }
     &::before {
@@ -25,9 +25,12 @@
     display:inline-block;
     margin-bottom: 0;
     background:url(images/logo.png) no-repeat 0 0;
-    background-size:100% auto;
+    background-size:409px 127px;
     text-indent:-999em;
-    a{display:block;height:100%}
+    a{display:block;height:100%};
+    @include media-query($on-palm) {
+      width:130px
+    }
 }
 
 .site-nav {
@@ -59,52 +62,50 @@
         .current a{color:$brand-color;}
     }
 
-    @include media-query($on-pc) {
-        float:right;
-    }
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: $background-color;
-        border: 1px solid $border-color;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $border-color;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-
-        }
-
-        .page-link {
-            padding: 5px 10px;
-        }
-    }
+    float:right;
+    // @include media-query($on-palm) {
+    //     position: absolute;
+    //     top: 9px;
+    //     right: 30px;
+    //     background-color: $background-color;
+    //     border: 1px solid $border-color;
+    //     border-radius: 5px;
+    //     text-align: right;
+    //
+    //     .menu-icon {
+    //         display: block;
+    //         float: right;
+    //         width: 36px;
+    //         height: 26px;
+    //         line-height: 0;
+    //         padding-top: 10px;
+    //         text-align: center;
+    //
+    //         > svg {
+    //             width: 18px;
+    //             height: 15px;
+    //
+    //             path {
+    //                 fill: $border-color;
+    //             }
+    //         }
+    //     }
+    //
+    //     .trigger {
+    //         clear: both;
+    //         display: none;
+    //     }
+    //
+    //     &:hover .trigger {
+    //         display: block;
+    //         padding-bottom: 5px;
+    //
+    //     }
+    //
+    //     .page-link {
+    //         padding: 5px 10px;
+    //     }
+    // }
 
     a,
     a:visited {
