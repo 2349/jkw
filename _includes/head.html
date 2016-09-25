@@ -9,6 +9,12 @@
     <!--[if lt IE 9]>
       <script src="/jkw/js/html5shiv.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+    var agt = navigator.userAgent.toLowerCase();
+    if (agt.indexOf("msie 7") != -1 || agt.indexOf("msie 8") != -1) {
+      location.href="/jkw/updateInfo";
+    }
+    </script>
     <link rel="shortcut icon" href="/jkw/css/images/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
