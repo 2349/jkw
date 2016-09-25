@@ -41,6 +41,7 @@ ul, ol, dl, figure,
 img {
     max-width: 100%;
     vertical-align: middle;
+    border:0;
 }
 
 
@@ -215,4 +216,4 @@ pre {
         clip: rect(0px, $spacing-unit*2, $spacing-unit*2, 0px);
         border-radius: 50%;
     }
-}  
+}
