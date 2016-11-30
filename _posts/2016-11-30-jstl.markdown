@@ -1,0 +1,355 @@
+---
+layout: post
+title: JSTL
+date:   2016-11-30 00:00:00
+category: JSTL
+---
+
+## JSTL이란?
+JSTL은 **JSP 표준 태그 라이브러리(JSP Standard Tag Library)의** 약어다. <br />간단하게 JSTL이란 자주 사용 될 수 있는 커스텀 태그들을 표준으로 모아놓은 태그 라이브러리다.<br />JCP(http://www.jcp.org)에서 표준을 제정했다.
+
+
+**태그 라이브러리란** JSP 특징인 화면(View)과 프로그램(Logic)의 분리와 더불어 동적 컨텐츠의 효율적인 관리를 지원하기 위한 기능으로 JSP 파일 내에 복잡한 프로그램 로직을 기술하지 않기 위해 고안된 방법이다. 이런 태그 라이브러리를 직접 만드는 것은 상당한 기술이 필요로해서 일반적으로 자주 쓰는 기능이라면 JSTL 표준에 따라 구현된 태그 라이브러리를 많이 쓴다고 한다.
+
+<br /><br />
+
+### JSTL 장점
+- 자신이 직접 원하는 기능을 구현하여 라이브러리로 등록
+- 간단한 프로그램 로직의 구사(자바의 변수 선언, if문, for 문 등에 해당하는 로직)
+- 재사용성
+- 가독성
+- 유지보수
+{% highlight JSP %}
+<%
+	if ( list.size() > 0) {
+	       for( int i = 0 ; i < list.size(); i++) {
+	            Data tata = (Data) list.get(i);
+%>
+	<%= data.getTitle() %>
+....
+<%
+	       }
+	} else {
+%>
+	존재안함.
+<%
+	}
+%>
+{% endhighlight %}
+
+{% highlight jsp %}
+<c:if test="!empty ${list}">
+	<c:forseach varname="data" list = "${list}">
+	       ${data.title}
+	</c:foreach>
+</c:if>
+<c:if test = "empty ${list}">
+	존재안함.
+</c>
+{% endhighlight %}
+JSP는 스크립트릿과 표현식 등의 스크립 코드와 HTML 코드가 뒤섞이게 되는데, 이렇게 뒤섞인 JSP 코드는 알아보기 쉽지 않다. 예를 들어, 중첩된 if-else 블록과 for 구문 등이 섞여 있을 경우 특히 보기 더 힘들어진다.
+
+
+<br /><br />
+
+### JSTL 처리영역
+application, sesstion, request, response, pageContext 등의 JSP 내장객체에 쉽게 접근하여, 그 외에도 파라메터, 헤더, 쿠키 등을 복잡한 코드를 사용하지 않고, 쉽게 직관적으로 사용할 수 있다.
+.equals() 메소드 등을 이용하는 대신 ==와 같이 쉽게 구현했으며, 조건, 반복, 이동에 대한 태그를 지원하기 때문에 태그만으로도 반복 기능을 구현할 수 있다.
+JSTL의 처리영역은 크게 4가지로 나뉘는데 core, format, xml, sql로 기능이 구분된다.
+
+| 라이브러리 | 기능 | URL 식별자 | 접두어(Prefix) | 예시 |
+|---|---|---|---|---|
+| 코어 | 변수 지원<br />실행 흐름 제어<br />URL 처리 | http://java.sun.com/jsp/jstl/core | c | &lt;c:tagname...&gt;  |
+| XML | XML 관련 처리<br />XML 흐름제어 | http://java.sun.com/jsp/jstl/fmt | fmt | &lt;x:tagname...&gt; |
+|  데이터베이스	| 데이터베이스 접근 | http://java.sun.com/jsp/jstl/sql | sql | &lt;sql:tagname...&gt; |
+| 포매팅 | 숫자, 날짜,시간 포매팅<br />국제화 처리<br />메시지 관리 | http://java.sun.com/jsp/jstl/xml | fmt | &lt;fmt:tagname...&gt; |
+| 함수 | Collection 처리<br />String 처리 | http://java.sun.com/jsp/jstl/fuctions | fn | fn:functionName(...) |
+
+<br />
+
+#### JSTL 선언
+{% highlight JSP %}
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+{% endhighlight %}
+
+<br />
+
+#### JSTL Core
+ if-else 또는 변수 지정 같은 논리적인 처리를 위해 사용되는 스크립트 코드를 대체하기 위한 태그를 제공한다.
+
+<table>
+  <thead>
+    <tr>
+      <th>기능분류</th>
+      <th>태그</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">변수 지원</td>
+      <td>set</td>
+      <td>JSP에서 사용될 변수를 설정한다.</td>
+    </tr>
+    <tr>
+      <td>remove</td>
+      <td>설정한 변수를 제거한다.</td>
+    </tr>
+    <tr>
+      <td rowspan="4">흐름 제어</td>
+      <td>if</td>
+      <td>조건에 따라 내부 코드를 수행한다.</td>
+    </tr>
+    <tr>
+      <td>choose</td>
+      <td>다중 조건을 처리할 때 사용한다.</td>
+    </tr>
+    <tr>
+      <td>forEach</td>
+      <td>컬렉션이나 Map의 각 항목을 처리할 때 사용한다.</td>
+    </tr>
+    <tr>
+      <td>forTokens</td>
+      <td>구분자로 분리된 각각의 토큰을 처리할 때 사용한다.</td>
+    </tr>
+    <tr>
+      <td rowspan="3">URL 처리</td>
+      <td>import</td>
+      <td>URL을 사용하여 다른 자원의 결과를 삽입한다.</td>
+    </tr>
+    <tr>
+      <td>redirect</td>
+      <td>지정한 경로로 리다이렉트 한다.</td>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>URL을 재작성 한다.</td>
+    </tr>
+    <tr>
+      <td rowspan="2">기타 태그</td>
+      <td>catch</td>
+      <td>익셉션 처리에 사용된다.</td>
+    </tr>
+    <tr>
+      <td>out</td>
+      <td>JspWriter에 내용을 알맞게 처리한 후 출력한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+##### 1. set
+{% highlight jsp %}
+- JSP의 setAttribute()와 같은 역활
+- 기본형
+ <c:set   var="변수명"
+              value="변수명에 할당된 값"
+              target="자바빈 객체명이나 Map 객체명"
+              property="자바빈 객체나 Map 객체의 값을 설정할 프로퍼티 명"
+              scope="변수의 공유 범위(유효기간)으로 page|request|session|application" />
+- 예제
+    <c:set var="country" value="${'Korea'}" />
+    <c:set var="intArray" value="<%=new int[] {1,2,3,4,5}%>" />
+    <c:set var="sum" value="${sum+i}" />
+{% endhighlight %}
+
+
+##### 2. out
+{% highlight jsp %}
+ - JSP의 표현식을 대체하는 것으로 많이 사용됨
+ - 기본형
+      <c:out var="변수명"
+                default="기본값"
+                escapeXML="true|false" />
+
+ * escapeXML
+ > 생략시 기본값은 true
+ > true일 경우 값 중에 포함된 <>&'" 문자들을 각각 <, >, &, ', "로 출력
+
+ - 예제
+      <c:out value="${sum}" />
+      <c:out value="안녕" />
+{% endhighlight %}
+
+
+##### 3. remove
+{% highlight jsp %}
+- JSP의 removeAttribute()와 같은 역활
+- 기본형
+      <c:remove var="변수명"
+                          scope="변수의 공유 범위로 page(생략 시 기본)|request|session|application" />
+- 예제
+      <c:remove var="browser" />
+{% endhighlight %}
+
+
+##### 4. catch
+{% highlight jsp %}
+- body 위치에서 실행되는 코드의 예외를 잡아내는 역할
+- 기본형
+      <c:catch var="에러가 발생할 때 에러 메세지가 포함될 변수명" />
+- 예제
+      <c:catch var="errmsg">
+           line 1~
+           <%=1/0%>
+           line 2~
+      </c:catch>
+      <c:out value="${errmsg}" />
+{% endhighlight %}
+
+
+##### 5. if
+{% highlight jsp %}
+- 조건문에 사용
+- 기본형
+  <c:if   test="조건 판별식"
+            var="변수명"
+            scope="변수의 공유범위 page|request|session|application"
+- 예제
+  <c:if test="${country != null}">
+       국가명 : <c:out value="${country}" />
+  </c:if>
+{% endhighlight %}
+
+
+<div id="choose">
+	<h4>6. choose</h4>
+	<xmp>
+ - 자바의 switch문과 동일
+ - 조건에서 문자열 비교가 가능
+ - 하나 이상의 <when>과 하나의 <otherwise> 서브 태그를 가짐
+	</xmp>
+</div>
+
+<div id="when">
+	<h4>7. when</h4>
+	<xmp>
+ - choose 태그의 서브태그
+ - choose 태그내에서 여러번 사용될 수 있다.
+ - 기본형
+      <c:when test="조건 판별식" />
+	</xmp>
+</div>
+
+<div id="otherwise">
+	<h4>8. otherwise</h4>
+	<xmp>
+ - choose 태그의 서브태그
+ - choose 태그내에서 한번만 사용될 수 있다.
+ - 예제 :
+      <c:choose>
+           <c:when test="${country == 'Korea'}">
+           나라 : <c:out value="${country}" />
+      </c:when>
+
+      <c:when test="${country == 'Canada'}">
+           나라 : <c:out value="${country}" />
+      </c:when>
+
+      <c:otherwise>
+           선택된 나라가 없습니다.
+      </c:otherwise>
+ </c:choose>
+	</xmp>
+</div>
+
+<div id="forEach">
+	<h4>9. forEach</h4>
+	<xmp>
+ - 객체 전체에 걸쳐 반복 실행할 때 사용
+ - 기본형
+      <c:forEach   items="반복할 객체명"
+                          begin="시작값"
+                          end="종료값"
+                          step="증가값"
+                          var="변수명"
+                          varStatus="별도의 변수" />
+	</xmp>
+</div>
+
+<div id="forTokens">
+	<h4>10. forTokens</h4>
+	<xmp>
+ - 문자열을 주어진 구분자(delimiter)로 분할
+ - 기본형
+      <c:forTokens items="반복할 객체명"
+                          delims="구분자"
+                          begin="반복할 시작값"
+                          end="반목 마지막값"
+                          step="증가값"
+                          var="변수명"
+                          varStatus="별도의 변수"
+ - 예제
+      <c:forTokens var="color" items="빨강색,주황색.노란색.초록색,파랑색,남색.보라색" delims=",.">
+           color : <c:out value="${color}" /><br>
+      </c:forTokens>
+	</xmp>
+</div>
+
+<div id="import">
+	<h4>11. import!</h4>
+	<xmp>
+- 웹 어플리케이션 내부의 자원 및 http, ftp와 같은 외부에 있는 자원에 대해 접근
+- 기본형
+<c:import! url="읽어올 URL"
+ var="읽어올 데이터를 저장할 변수명"
+ scope="변수의 공유 범위"
+ varReader="리소스의 내용을 Reader 객체로 읽어올 때 사용"
+ charEncoding="읽어온 데이터의 캐릭터셋 지정" />
+	</xmp>
+</div>
+
+<div id="redirect">
+	<h4>12. redirect</h4>
+	<xmp>
+ - response.sendRedirect()를 대체하는 태그로 지정한 다른 페이지로 이동
+ - 기본형
+      <c:redirect url="이동할 URL" />
+	</xmp>
+</div>
+
+<div id="url">
+	<h4>13. url</h4>
+	<xmp>
+ - 쿼리 파라미터로 부터 URL 생성
+ - 기본형
+      <c:url var="생성한 URL이 저장될 변수명"
+                value="생성할 URL"
+                scope="변수의 공유 범위" />
+	</xmp>
+</div>
+
+<div id="param">
+	<h4>14. param</h4>
+	<xmp>
+ - 기본형
+      <c:param name="파라미터 명"
+                     value="파라미터 값" />
+           <c:url var="registrationURL" value="/customers/register">
+           <c:param name="name" value="${param.name}" />
+           <c:param name="country" value="${param.country}" />
+      </c:url>
+	</xmp>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+h5{font-size:18px;}
+table{width:100%;border-collapse:collapse}
+table th, table td{padding:5px 10px;border:1px solid #000}
+</style>
+http://cobbybb.tistory.com/3
+http://gangzzang.tistory.com/entry/JSP-JSTLJSP-Standard-Tag-Library-%EC%BD%94%EC%96%B4-%ED%83%9C%EA%B7%B8
+http://blog.naver.com/PostView.nhn?blogId=ken6ybn&logNo=100167359981&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView
+http://lonelycat.tistory.com/389
