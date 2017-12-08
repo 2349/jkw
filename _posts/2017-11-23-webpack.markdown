@@ -1,0 +1,91 @@
+---
+layout: post
+title: wabpack
+date:   2017-11-23 00:00:00
+category: webpack
+---
+
+## webpack 이란?
+webpack은 javascript 모듈 번들러(Bundler)다. 번들러는 말 그대로 번들링하는 것인데 아래 그림처럼 별도의 파일로 분리되어 있는 javascript 모듈들을 의존성을 통해 하나 혹은 여러 개의 파일로 묶는다. 이것을 번들링이라고 한다. 
+![webpack](https://webpack.js.org/bf093af83ee5548ff10fef24927b7cd2.svg)
+
+### webpack이라는 것은 왜 나타난 것일까?
+자바스크립트 코드가 많아지면 하나의 파일로 관리하는데 한계가 있다. 그렇다고 여러개 파일을 브라우져에서 로딩하는 것은 그만큼 네트웍 비용을 치뤄야하는 단점이 있다. 뿐만 아니라 각 파일은 서로의 스코프를 침범하지 않아야 하는데 잘못 작성할 경우 변수 충돌의 위험성도 있다.
+
+함수 스코프를 사용하는 자바스크립트는 즉시호출함수(IIFE)를 사용해 모듈을 만들 수 있다. CommonJS나 AMD 스타일의 모듈 시스템을 사용하면 파일별로 모듈을 관리할 수도 있다.
+
+그러나 여전히 브라우져에서는 파일 단위 모듈 시스템을 사용하는 것은 쉽지 않은 일이다. 모듈을 IIFE 스타일로 변경해 주는 과정 뿐만 아니라 하나의 파일로 묶어(bundled) 네트웍 비용을 최소화 할수 있는 방법이 웹 프로트엔드 개발 과정에는 필요하다.
+
+웹팩은 이러한 배경에서 이해할 수 있다. 기본적으로 모듈 번들러로 소개하고 있는 웹팩의 주요 네 가지 개념을 정리해 보자.
+
+## Entry
+webpack은 라이브러리 간의 의존성을 그래프로 표현하는데 그래프 시작점을 entry라는 옵션을 통해 설정할 수 있습니다. 
+
+webpack.config.js
+    
+    module.exports = {
+        entry: './src/index.js'
+    };
+
+## Output
+entry로 지정된 파일로부터 bundling을 진행하고, 그 결과를 어떻게 할지를 설정합니다.
+
+    const path = require('path');
+    
+    module.exports = {
+        entry: './src/index.js',
+        output: {
+            filename: 'bundle.js',                  // 파일 이름
+            path: path.resolve(__dirname, 'dist')   // 절대 경로
+        }
+    };
+
+## Module
+### loader
+웹팩은 모든 파일을 모듈로 관리한다고 했다. 자바스크립트 파일 뿐만 아니라 이미지, 폰트, 스타일시트도 전부 모듈로 관리한다. 그러나 웹팩은 자바스크립트 밖에 모른다. 비 자바스크립트 파일을 웹팩이 이해하게끔 변경해야하는데 로더가 그런 역할을 한다.
+
+    const config = {
+        module: {
+            rules: [{
+                test: /\.js$/,                          // load할 파일을 지정
+                exclude: /node_modules/,                // path 지정
+                include: path.join(__dirname, 'src'),   // path 지정
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['env', { module: false }]  // babel-preset-env의 env가 es2015, es2016, es2017, latest를 대체
+                        ]
+                    }
+                }]
+            }]
+        }
+    };
+
+## Plugins
+로더가 파일단위로 처리하는 반면 플러그인은 번들된 결과물을 처리한다. 번들된 자바스크립트를 난독화 한다거나 특정 텍스트를 추출하는 용도로 사용할 수 있다.
+### UglifyJsPlugin
+UglifyJsPlugin은 로더로 처리된 자바스크립트 결과물을 난독화 처리하는 플러그인이다.
+### ExtractTextWebpackPlugin
+별로의 CSS 파일로 추출해준다.
+### HtmlWebpackPlugin
+html에 번들링 한 파일을 자동으로 삽입해준다.
+
+
+    module.exports = {
+        plugins: [
+            new webpack.optimize.UglifyJsPlugin(),
+            new HtmlWebpackPlugin({template: './src/index.html'})
+        ]
+    }
+
+
+----------------------------
+
+
+참고사이트
+- [웹팩의 기본 개념](http://blog.jeonghwan.net/js/2017/05/15/webpack.html)
+- [(Webpack) 모듈? 번들링?](https://perfectacle.github.io/2016/11/18/Module-bundling-with-Webpck/)
+- [웹팩입문자를 위한 튜토리얼 파트1 - 웹팩 입문 !](https://github.com/AriaFallah/WebpackTutorial/tree/master/ko-arahansa/part1)
+- [Webpack2, 입문 가이드 1편](https://jaeyeophan.github.io/2017/05/05/webpack-tutorial-1/)
+- [Webpack2 시작하기](http://dev-momo.tistory.com/entry/Webpack2-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)

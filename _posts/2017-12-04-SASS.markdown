@@ -1,0 +1,29 @@
+---
+layout: post
+title: SASS
+date:   2017-12-04 00:00:00
+category: SASS, SCSS
+---
+
+## Sass 이란?
+Sass(Syntactically Awesome Style Sheets : 문법적으로 짱 멋진 스타일시트)는 **CSS유지보수나 효율성의 단점을 보완하기 위한 기술**로, SASS 자체를 그대로 사용할수는 없고, SASS의 문법에 맞게 SASS파일을 만들면 컨버터를 이용해서 CSS를 생성합니다.
+
+### Sass와 SCSS
+Sass와 SCSS와의 가장 큰 차이점은 문법차이인데, Sass같은 경우에는 {}대신 들여쓰기를 사용하고 세미콜론;을 사용하지 않습니다. 
+
+    p
+        font-size:13px
+
+2010년 5월 버전3이 나오면서 SCSS라는 새로운 문법 체계를 가지고 나왔습니다. 기존 Sass 문법은 줄이고 CSS 문법은 그대로 살려서 CSS가 지원하는 **모든 문법과 기능**을 SCSS에서 그대로 사용할 수 있습니다.
+
+    p {
+        font-size:13px;
+    }
+
+SCSS가 CSS와 더 비슷하고 친숙하기에 Sass보다 SCSS를 더 선호한다고 합니다. 그래서 SCSS가 가이드라인의 기본이 됩니다.
+
+----------------------------
+
+
+참고사이트
+- []()

@@ -1,0 +1,93 @@
+---
+layout: post
+title: Yarn
+date:   2017-11-21 00:00:00
+category: yarn, package.json
+---
+
+## Yarn 이란?
+facebook, google, exponent, tilde의 개발자들과 함께 npm client를 대체할 새로운 **자바스크립트 패키지 매니저**이다.
+
+## Yarn 장점
+- Ultra Fast(빠름) : 캐싱하고 있어서 빠르다
+- Mega Secure(안전) : checksum 검사를 통해 중복검사, 무결성을 보호
+- Super Reliable(신뢰) : 자세하지만 간결한 lockfile 포맷과 결정론 알고리즘
+- Offline Mode : 기존에 설치한 패키지를 다시 설치할 때 인터넷을 쓰지 않아도 됨.
+- Deterministic : 같은 패키지를 설치할 때에 어떤 환경에서도 같은 방법으로 설치됨.
+- Network Performance 
+- Multiple Registries : npm과 bower를 같이 사용
+- Network Resilience : 요청이 실패해도 다시 시도
+- Flat Mode : 모든 라이브러리의 의존성을 검사해서 중복 설치를 피함.
+
+## Yarn Usage
+### Yarn 설치
+npm으로도 설치가 가능하다.
+
+    $ npm install -global yarn
+
+### 프로젝트 시작
+
+    $ yarn init     // package.json 설치
+    $ yarn install  // package.json 안의 모든 패키지 설치
+
+### 의존성 작업
+    
+    $ yarn add [package]
+    $ yarn add [package]@[version]
+    $ yarn add [package]@[tag]              // beta, next, lastest
+
+    $ yarn add [package] --dev / -D         // devDependencies
+    $ yarn add [package] --peer / -P        // peerDependencies
+    $ yarn add [package] --optional / - O   // optionalDependencies
+
+    $ yarn add [package] --exact / -E       // 정확한 버전
+    $ yarn add [package] --tilde / -T       // release 최신 버전
+
+### 패키지 업그레이드
+
+    $ yarn upgrade [package]
+    $ yarn upgrade [package]@[version]
+    $ yarn upgrade [package]@[tag]
+
+### 패키지 제거
+
+    $ yarn remove [package]
+
+### 기타 명령어
+
+    $ yarn global [add/ls/remove/upgrade]   // 전역
+
+    $ yarn autoclean [-I/--init] [-F/--force]   // 의존성에서 불필요한 파일 및 폴더 제거
+
+
+## yarn.lock
+파일의 처음에 적혀 있는대로, 직접 이파일을 수정하면 안된다. 이것은 Yarn CLI를 통해 의존성을 업데이트, 삭제, 또는 추가 할 때, 전적으로 Yarn에서 핸들링 하는 것이다. 
+이 파일의 목적은 npm이 가지고 있는 버전 관리와 non-determinism 문제를 해결하기 위한 것이다. 이 프로젝트를 설치할 때 모든 시스템에 걸쳐 일관성을 보장하기 위해 정확한 버전과 설치된 각 종속성을 잠그는(locks) 역할을 한다. 이것이 프로젝트의 소스 제어 저장소에 그것(yarn.lock)을 포함해야하는 이유이다.
+
+
+----------------------------
+
+
+## package.json
+### scripts
+간편 스크립트 생성 후 커맨드로 칠 수 있는... 참고 사이트
+
+### dependencies
+일반적인 의존성 규정. 테스트 관련 모듈이나 트랜스 파일러 관련 모듈을 dependencies에 추가하면 안된다.
+
+### devDependencies
+패키지 테스트 및 문서 작성에 사용되는 외부 프레임 워크 같은 경우 devDependencies에 추가하는 것이 좋다
+
+### peerDependencies
+플러그인인 경우. 호스트 패키지와 호환성을 가진 경우(내가 만든 모듈이 다른 모듈과 함께 동작할 수 있다는 호환성을 표시)
+
+
+----------------------------
+
+
+참고사이트
+- [Yarn CLI](https://yarnpkg.com/en/docs/cli/)
+- [새로운 NPM CLIENT YARN](http://fetobe.co.kr/%EC%83%88%EB%A1%9C%EC%9A%B4-npm-client-yarn/)
+- [처음 보는 자바스크립트의 새 패키지 매니저](https://www.vobour.com/book/view/Y5vcMHJGHyN5ayheM)
+- [모두 알지만 모두 모르는 package.json](http://programmingsummaries.tistory.com/385)
+- [npm-scripts](https://outofbedlam.gitbooks.io/npm-handbook/content/use/npm-scripts.html)
